@@ -1,1 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+
+.hr-grey {
+  border: 1px solid grey;
+}
+
+.hr-white {
+  border: 1px solid white;
+}
+
+.quote {
+  color: #0275d8;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+}

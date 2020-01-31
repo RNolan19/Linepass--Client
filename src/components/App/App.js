@@ -8,6 +8,7 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
+import Bar from './Bar'
 
 class App extends Component {
   constructor () {
@@ -41,6 +42,7 @@ class App extends Component {
             message={alert.message}
           />
         ))}
+        <Bar lincoln={'../public/lincoln.png'}/>
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
