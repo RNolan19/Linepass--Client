@@ -22,20 +22,36 @@ const alwaysOptions = (
   </Fragment>
 )
 
+const quotes = (
+  <Fragment>
+    <hr className='hr-white'></hr>
+    <div className='quote'>
+      <h1 className='quote'>Life is too short to wait in line</h1>
+      <p className='quote'>-Wayne Gretzky</p>
+      <h4 className='quote'>-Michael Scott</h4>
+
+      <hr className='hr-grey'></hr>
+    </div>
+  </Fragment>
+)
+
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
-      LinePass Boston
-    </Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ml-auto">
-        { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
-        { alwaysOptions }
-        { user ? authenticatedOptions : unauthenticatedOptions }
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
+  <Fragment>
+    <Navbar id="navbar-font" bg="primary" variant="dark" expand="md">
+      <Navbar.Brand href="#">
+      LinePass Boston- Never Wait In Line Again
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ml-auto">
+          { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
+          { alwaysOptions }
+          { user ? authenticatedOptions : unauthenticatedOptions }
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+    { quotes }
+  </Fragment>
 )
 
 export default Header

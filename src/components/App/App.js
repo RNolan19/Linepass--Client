@@ -8,7 +8,10 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
-import Bar from './Bar'
+import Bar from '../Bar'
+import Lincoln from './lincoln.jpg'
+import Broadway from './the broadway.jpeg'
+import Loco from './loco.jpg'
 
 class App extends Component {
   constructor () {
@@ -42,7 +45,6 @@ class App extends Component {
             message={alert.message}
           />
         ))}
-        <Bar lincoln={'../public/lincoln.png'}/>
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
@@ -57,6 +59,9 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
         </main>
+        <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway'/>
+        <Bar barImage={Broadway} barName='The Broadway' city='South Boston' address='726 East Broadway'/>
+        <Bar barImage={Loco} barName='Loco Taqueria' city='South Boston' address='412 West Broadway'/>
       </Fragment>
     )
   }
