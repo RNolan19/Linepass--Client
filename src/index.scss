@@ -8,9 +8,19 @@
   border: 1px solid white;
 }
 
-.quote {
-  color: #0275d8;
-  font-family: 'Permanent Marker', cursive;
+.hr-large {
+  border: 30px solid white;
+}
+
+.main-header   {
+  font-family: 'Playfair Display SC', cursive;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.5em;
+}
+
+.header-text {
+  font-family: 'Playfair Display SC', cursive;
   text-align: center;
 }
 
@@ -20,11 +30,27 @@
   text-align: center;
 }
 
+a {
+
+  &:hover {
+    background-color: rgba(51, 102, 255, .5);
+    text-decoration: none;
+  }
+
+  &.create {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    letter-spacing: .4rem;
+}
+}
+
 .bars {
   display: inline-block;
   padding-left: 6%;
-
 }
+
+
 
 #skip-button {
   font-family: 'Bowlby One SC', cursive;

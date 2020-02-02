@@ -11,14 +11,15 @@ class Bar extends React.Component {
   render () {
     return (
       <Fragment>
-        <Col className="bars" sm={6} md={4}>
+        <Col className="bars" sm={6} md={4} as={'a'}>
           <div className="bar-container">
             {/* this is how you have to comment in React.  Must be inside Fragment */}
             {/* anything inside the brackets can be JavaScript */}
             <img src={this.props.barImage} width='350px' height='400px' />
             <h1 className="barName">{this.props.barName}</h1>
             <h3 className="city">{this.props.city}</h3>
-            <h6>{this.props.address}</h6>
+            <h5>{this.props.address}</h5>
+            <hr></hr>
             <Button id="skip-button">SKIP THE LINE</Button>
           </div>
         </Col>

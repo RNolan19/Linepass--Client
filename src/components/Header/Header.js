@@ -25,12 +25,14 @@ const alwaysOptions = (
 const quotes = (
   <Fragment>
     <hr className='hr-white'></hr>
-    <div className='quote'>
-      <h1 className='quote'>Life is too short to wait in line</h1>
-      <p className='quote'>-Wayne Gretzky</p>
-      <h4 className='quote'>-Michael Scott</h4>
-
+    <div className='header-text'>
+      <h1 className='main-header'>Never Wait In Line Again</h1>
+      <hr className='hr-white'></hr>
       <hr className='hr-grey'></hr>
+
+      <h5>Life is too short to wait in line</h5>
+      <p>-Wayne Gretzky</p>
+      <h5 className='Michael'>-Michael Scott</h5>
     </div>
   </Fragment>
 )
@@ -39,7 +41,7 @@ const Header = ({ user }) => (
   <Fragment>
     <Navbar id="navbar-font" bg="primary" variant="dark" expand="md">
       <Navbar.Brand href="#">
-      LinePass Boston- Never Wait In Line Again
+      LinePass Boston
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -51,6 +53,7 @@ const Header = ({ user }) => (
       </Navbar.Collapse>
     </Navbar>
     { quotes }
+    <hr className='hr-white'></hr>
   </Fragment>
 )
 
