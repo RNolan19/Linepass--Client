@@ -12,6 +12,62 @@
   border: 30px solid white;
 }
 
+.inner-div {
+  align-items: center;
+
+  background-position: center;
+  background-size: cover;
+  clip-path: inset(5em);
+  display: flex;
+  height: 93vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+#homepage-buton {
+  display: block;
+}
+
+.div-container{
+  align-items: center;
+  display: flex;
+  filter: drop-shadow(0 20px 10px rgb(0, 0, 0));
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+
+  &::before {
+    border-left: 1px solid blue;
+    border-right: 1px solid blue;
+    border-top: 2px solid blue;
+    border-bottom: 2px solid blue;
+    content: '';
+    display: block;
+    filter: blur(1px);
+    height: calc(100% - 10em);
+    position: absolute;
+    width: calc(100% - 10em);
+    z-index: 2;
+  }
+
+  > .homepage-buton {
+  color: white;
+  display: flex;
+  font-size: 3.5em;
+  letter-spacing: 1.5rem;
+  margin-top: 7.5rem;
+  padding-left: .375em;
+  position: absolute;
+  z-index: 6;
+}
+}
+.homepage-text {
+  font-family: 'Playfair Display SC', cursive;
+  text-align: center;
+  font-weight: bold;
+  font-size: 5.5em;
+  color: blue;
+}
 .main-header   {
   font-family: 'Playfair Display SC', cursive;
   text-align: center;

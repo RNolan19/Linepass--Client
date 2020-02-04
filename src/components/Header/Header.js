@@ -26,13 +26,13 @@ const quotes = (
   <Fragment>
     <hr className='hr-white'></hr>
     <div className='header-text'>
-      <h1 className='main-header'>Never Wait In Line Again</h1>
+      <h1 className='main-header'>Life is Too Short To Wait In Line</h1>
       <hr className='hr-white'></hr>
       <hr className='hr-grey'></hr>
 
-      <h5>Life is too short to wait in line</h5>
-      <p>-Wayne Gretzky</p>
-      <h5 className='Michael'>-Michael Scott</h5>
+      { /* <h5>Life is too short to wait in line</h5>
+        <p>-Wayne Gretzky</p>
+       <h5 className='Michael'>-Michael Scott</h5> */ }
     </div>
   </Fragment>
 )
