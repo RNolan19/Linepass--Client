@@ -1,14 +1,18 @@
 import React, { Fragment } from 'react'
-import Button from 'react-bootstrap/Button'
+import Nav from 'react-bootstrap/Nav'
 
 class Homepage extends React.Component {
   render () {
     return (
       <Fragment>
-        <div className="div-container">
-          <div className="inner-div">
+        <div className='gradient'>
+          <div className="div-container">
             <h1 className="homepage-text"> LinePass Boston </h1>
-            <Button className='homepage-buton mr-2' varient="primary">Update</Button>
+            <span className="links">
+              <Nav.Link className="enter" href="#bars">ENTER</Nav.Link>
+              <Nav.Link className="acct-link" href="#sign-in">Sign In</Nav.Link>
+              <Nav.Link className="acct-link" href="#sign-up">Sign Up</Nav.Link>
+            </span>
           </div>
         </div>
       </Fragment>

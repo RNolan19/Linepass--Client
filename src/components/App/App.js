@@ -56,7 +56,7 @@ class App extends Component {
             message={alert.message}
           />
         ))}
-        <main className="">
+        <main className="main">
           <Route exact path='/' render={() => (
             <Homepage />
           )} />
