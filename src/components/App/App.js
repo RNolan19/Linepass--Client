@@ -9,6 +9,7 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import Bar from '../Bar'
+import AddBar from '../AddBar'
 import Homepage from '../Homepage'
 import Lincoln from './lincoln.jpg'
 import Broadway from './the broadway.jpeg'
@@ -72,6 +73,10 @@ class App extends Component {
               <Bar barImage={Legal} barName='Legal Harborside' city='Seaport' address='270 Northern Ave'/>
               <hr className='hr-large'></hr>
             </div>
+          )} />
+
+          <Route exact path='/add-my-bar' render={() => (
+            <AddBar />
           )} />
 
           <Route path='/sign-up' render={() => (

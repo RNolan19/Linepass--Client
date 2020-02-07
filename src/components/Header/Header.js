@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+// import { Link } from 'react-router-dom'
 
 const authenticatedOptions = (
   <Fragment>
@@ -26,7 +27,8 @@ const quotes = (
   <Fragment>
     <hr className='hr-white'></hr>
     <div className='header-text'>
-      <h1 className='main-header'>Life is Too Short To Wait In Line</h1>
+      <h2 className='main-header'>Because Life is Too Short To Wait In Line</h2>
+      <Nav.Link className="add-my-bar" href="#add-my-bar">+ Add Your Bar</Nav.Link>
       <hr className='hr-white'></hr>
       <hr className='hr-grey'></hr>
 
