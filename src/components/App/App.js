@@ -17,6 +17,8 @@ import Loco from './loco.jpg'
 import Stats from './stats3.jpg'
 import Capo from './Capo.jpg'
 import Legal from './legal.jpg'
+
+import NewBar from '../NewBar'
 //
 // <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway'/>
 // <Bar barImage={Broadway} barName='The Broadway' city='South Boston' address='726 East Broadway'/>
@@ -32,8 +34,29 @@ class App extends Component {
 
     this.state = {
       user: null,
-      alerts: []
+      alerts: [],
+      bars: {}
     }
+  }
+
+  addBars = bar => {
+    // 1- take a copy of the existing state. Never want to directly mutate state
+    const newBars = { ...this.state.bars }
+    // 2- add our new Bar to the Bars variable
+    // use timestamp to give each Bar a unique index ID
+    newBars[`bar${Date.now()}`] = bar
+    // 3- Set the new bars object to state w/ built in setState method
+    this.setState({
+      // pass it the piece you want to update, aka the bars state, + overwrite it
+      // with the new object.
+      bars: newBars
+    })
+  }
+
+  loadSampleBars = () => {
+    // this.setState({
+    //   bars: sampleFishes
+    // })
   }
 
   setUser = user => this.setState({ user })
@@ -72,11 +95,14 @@ class App extends Component {
               <Bar barImage={Capo} barName='Capo Restaurant' city='South Boston' address='443 West Broadway'/>
               <Bar barImage={Legal} barName='Legal Harborside' city='Seaport' address='270 Northern Ave'/>
               <hr className='hr-large'></hr>
+              <ul className="bars">
+                {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} />)}
+              </ul>
             </div>
           )} />
 
           <Route exact path='/add-my-bar' render={() => (
-            <AddBar />
+            <AddBar addBars={this.addBars} loadSampleBars={this.loadSampleBars}/>
           )} />
 
           <Route path='/sign-up' render={() => (
