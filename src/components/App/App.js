@@ -95,7 +95,7 @@ class App extends Component {
               <Bar barImage={Capo} barName='Capo Restaurant' city='South Boston' address='443 West Broadway'/>
               <Bar barImage={Legal} barName='Legal Harborside' city='Seaport' address='270 Northern Ave'/>
               <hr className='hr-large'></hr>
-              <ul className="bars">
+              <ul className="added-bar-container">
                 {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} />)}
               </ul>
             </div>

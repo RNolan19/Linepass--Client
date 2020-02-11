@@ -1,14 +1,45 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Legal from './App/legal.jpg'
+// import { Col } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
 
 class NewBar extends React.Component {
   render () {
-    return (
-      <li className="added-bars">
-        <h3 className="bar-name">
-          {this.props.details.name}
-        </h3>
+    const { name, city, address, price } = this.props.details
 
-      </li>
+    return (
+      <Fragment>
+        <div className="added-bar-container" sm={6} md={4} as={'a'}>
+          <div className="bar-container">
+            {/* this is how you have to comment in React.  Must be inside Fragment */}
+            {/* anything inside the brackets can be JavaScript */}
+            <img src={Legal} width='350px' height='400px' />
+            <h1 className="barName">{name}</h1>
+            <h3 className="city">{city}</h3>
+            <h5 className="city">{address}</h5>
+            <h5 className="city">Price to Enter: ${price}</h5>
+            <hr></hr>
+            <Button id="skip-button">SKIP THE LINE</Button>
+          </div>
+        </div>
+      </Fragment>
+
+    // <Fragment>
+    //   <Col className="bars" sm={6} md={4} as={'a'}>
+    //     <div className="bar-container">
+    //       <li className="added-bars">
+    //         <img src= {Legal} width='350px' height='400px'/>
+    //         <h3 className="bar-name">
+    //           {name}
+    //           <span className="price">{price}</span>
+    //         </h3>
+    //         <p>{desc}</p>
+    //         <hr></hr>
+    //         <Button id="skip-button">SKIP THE LINE</Button>
+    //       </li>
+    //     </div>
+    //   </Col>
+    // </Fragment>
     )
   }
 }

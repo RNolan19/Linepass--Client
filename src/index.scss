@@ -36,6 +36,26 @@ body {
   text-align: center;
 }
 
+.bars {
+  display: inline-block;
+  padding-left: 6%;
+  // border: 1px solid black;
+}
+
+// .added-bar {
+//   font-family: 'Playfair Display SC', serif;
+//   text-align: center;
+//   // margin: auto;
+// }
+
+.added-bar-container {
+  display: flex;
+  justify-content: space-around;
+  // border: 1px solid black;
+  // padding-left: 5%;
+
+}
+
 .div-container {
   align-items: center;
   align-content: center;
@@ -107,12 +127,6 @@ a {
     letter-spacing: .4rem;
 }
 }
-
-.bars {
-  display: inline-block;
-  padding-left: 6%;
-}
-
 
 
 #skip-button {
