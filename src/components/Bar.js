@@ -24,7 +24,7 @@ class Bar extends React.Component {
             <h3 className="city">{this.props.city}</h3>
             <h5>{this.props.address}</h5>
             <hr></hr>
-            <Link to={`/bars/${this.props.barName}`}><Button id="skip-button">SKIP THE LINE</Button></Link>
+            <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
           </div>
         </Col>
       </Fragment>

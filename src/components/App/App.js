@@ -87,7 +87,9 @@ class App extends Component {
         ))}
         <main className="main">
           <Route exact path='/' render={() => (
-            <Homepage />
+            <div>
+              <Homepage />
+            </div>
           )} />
           <Route exact path='/bars' render={() => (
             <div>
@@ -108,9 +110,12 @@ class App extends Component {
           )} />
 
           <Route exact path="/bars/:id" render={() => (
-            <ul className="added-bar-container">
-              {Object.keys(this.state.bars).map(key => <BarPage key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
-            </ul>
+            <div>
+              <Header user={user} />
+              <ul className="added-bar-container">
+                {Object.keys(this.state.bars).map(key => <BarPage key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
+              </ul>
+            </div>
           )} />
 
           <Route exact path='/add-my-bar' render={() => (

@@ -19,7 +19,7 @@ class NewBar extends React.Component {
             <h5 className="city">{this.props.details.address}</h5>
             <h5 className="city">Price to Enter: ${this.props.details.price}</h5>
             <hr></hr>
-            <Link to={`/bars/${this.props.details.name}`}><Button id="skip-button" onClick={this.props.getBarInfo}>SKIP THE LINE</Button></Link>
+            <Link to={`/bars/${this.props.details.name}`}><Button className="btn-large" id="skip-button" onClick={this.props.getBarInfo}>SKIP THE LINE</Button></Link>
           </div>
         </div>
       </Fragment>
