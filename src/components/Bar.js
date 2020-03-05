@@ -3,6 +3,10 @@ import React, { Fragment } from 'react'
 import { render } from 'react-dom'
 import Button from 'react-bootstrap/Button'
 import { Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
+// this just provides dummy Bar Data or gives a way for me to add Bars by myself
+// NewBar displays all the bars that are added by users
 
 class Bar extends React.Component {
   // Returns whatever is inside the parantheses after Return
@@ -20,7 +24,7 @@ class Bar extends React.Component {
             <h3 className="city">{this.props.city}</h3>
             <h5>{this.props.address}</h5>
             <hr></hr>
-            <Button id="skip-button">SKIP THE LINE</Button>
+            <Link to={`/bars/${this.props.barName}`}><Button id="skip-button">SKIP THE LINE</Button></Link>
           </div>
         </Col>
       </Fragment>

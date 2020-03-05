@@ -19,6 +19,7 @@ import Capo from './Capo.jpg'
 import Legal from './legal.jpg'
 
 import NewBar from '../NewBar'
+import BarPage from '../BarPage'
 //
 // <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway'/>
 // <Bar barImage={Broadway} barName='The Broadway' city='South Boston' address='726 East Broadway'/>
@@ -37,6 +38,10 @@ class App extends Component {
       alerts: [],
       bars: {}
     }
+  }
+
+  getBarInfo = (event) => {
+    console.log(event.target)
   }
 
   addBars = bar => {
@@ -96,9 +101,16 @@ class App extends Component {
               <Bar barImage={Legal} barName='Legal Harborside' city='Seaport' address='270 Northern Ave'/>
               <hr className='hr-large'></hr>
               <ul className="added-bar-container">
-                {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} />)}
+                {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
               </ul>
+
             </div>
+          )} />
+
+          <Route exact path="/bars/:id" render={() => (
+            <ul className="added-bar-container">
+              {Object.keys(this.state.bars).map(key => <BarPage key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
+            </ul>
           )} />
 
           <Route exact path='/add-my-bar' render={() => (

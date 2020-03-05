@@ -129,10 +129,14 @@ a {
 }
 
 
-#skip-button {
-  font-family: 'Bowlby One SC', cursive;
-}
+// Bar Bar
 
-#navbar-font {
-  font-family: 'Bowlby One SC', cursive;
+.bar-page-container {
+  border: 2px solid red;
+  display: flex;
+  justify-content: space-around;
+
+  .bar-image {
+    justify-content: flex-start;
+  }
 }
