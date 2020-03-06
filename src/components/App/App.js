@@ -20,6 +20,7 @@ import Legal from './legal.jpg'
 
 import NewBar from '../NewBar'
 import BarPage from '../BarPage'
+import Footer from '../Footer'
 //
 // <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway'/>
 // <Bar barImage={Broadway} barName='The Broadway' city='South Boston' address='726 East Broadway'/>
@@ -105,6 +106,7 @@ class App extends Component {
               <ul className="added-bar-container">
                 {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
               </ul>
+              <Footer />
 
             </div>
           )} />
@@ -115,6 +117,7 @@ class App extends Component {
               <ul className="added-bar-container">
                 {Object.keys(this.state.bars).map(key => <BarPage key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
               </ul>
+              <Footer />
             </div>
           )} />
 
