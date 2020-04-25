@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 // cherry-picking which methods you want to use from react-dom
 import { render } from 'react-dom'
 import Button from 'react-bootstrap/Button'
-import { Col } from 'react-bootstrap'
+// import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 // this just provides dummy Bar Data or gives a way for me to add Bars by myself
@@ -15,18 +15,104 @@ class Bar extends React.Component {
   render () {
     return (
       <Fragment>
-        <Col className="bars" sm={6} md={4} as={'a'}>
+        <div className="bar-section">
+          <h1 className="bar-header">Skip The Line At Boston&#39;s Busiest Establishments</h1>
+
           <div className="bar-container">
-            {/* this is how you have to comment in React.  Must be inside Fragment */}
-            {/* anything inside the brackets can be JavaScript */}
-            <img src={this.props.barImage} width='350px' height='400px' />
-            <h1 className="barName">{this.props.barName}</h1>
-            <h3 className="city">{this.props.city}</h3>
-            <h5>{this.props.address}</h5>
-            <hr></hr>
-            <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
+
+            <div className="card">
+              <div className="card-front">
+                <div className="card_heading">
+                  <h1 className="barName">{this.props.barName}</h1>
+                </div>
+                <div className="card_details">
+                  <h3 className="city">{this.props.city}</h3>
+                  <h5>{this.props.address}</h5>
+                </div>
+              </div>
+            </div>
+
+            <div sm={3} className="bar-item">
+              {/* this is how you have to comment in React.  Must be inside Fragment */}
+              {/* anything inside the brackets can be JavaScript */}
+              <img src={this.props.barImage} />
+              <h1 className="barName">{this.props.barName}</h1>
+              <h3 className="city">{this.props.city}</h3>
+              <h5>{this.props.address}</h5>
+              <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
+            </div>
+
+            <div sm={3} className="bar-item">
+              {/* this is how you have to comment in React.  Must be inside Fragment */}
+              {/* anything inside the brackets can be JavaScript */}
+              <img src={this.props.barImage} />
+              <h1 className="barName">{this.props.barName}</h1>
+              <h3 className="city">{this.props.city}</h3>
+              <h5>{this.props.address}</h5>
+              <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
+            </div>
+
+            <div sm={3} className="bar-item">
+              {/* this is how you have to comment in React.  Must be inside Fragment */}
+              {/* anything inside the brackets can be JavaScript */}
+              <img src={this.props.barImage} />
+              <h1 className="barName">{this.props.barName}</h1>
+              <h3 className="city">{this.props.city}</h3>
+              <h5>{this.props.address}</h5>
+              <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
+            </div>
+
+            <div sm={3} className="bar-item">
+              {/* this is how you have to comment in React.  Must be inside Fragment */}
+              {/* anything inside the brackets can be JavaScript */}
+              <img src={this.props.barImage} />
+              <h1 className="barName">{this.props.barName}</h1>
+              <h3 className="city">{this.props.city}</h3>
+              <h5>{this.props.address}</h5>
+              <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
+            </div>
+
+            <div sm={3} className="bar-item">
+              {/* this is how you have to comment in React.  Must be inside Fragment */}
+              {/* anything inside the brackets can be JavaScript */}
+              <img src={this.props.barImage} />
+              <h1 className="barName">{this.props.barName}</h1>
+              <h3 className="city">{this.props.city}</h3>
+              <h5>{this.props.address}</h5>
+              <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
+            </div>
+
+            <div sm={3} className="bar-item">
+              {/* this is how you have to comment in React.  Must be inside Fragment */}
+              {/* anything inside the brackets can be JavaScript */}
+              <img src={this.props.barImage} />
+              <h1 className="barName">{this.props.barName}</h1>
+              <h3 className="city">{this.props.city}</h3>
+              <h5>{this.props.address}</h5>
+              <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
+            </div>
+
+            <div sm={3} className="bar-item">
+              {/* this is how you have to comment in React.  Must be inside Fragment */}
+              {/* anything inside the brackets can be JavaScript */}
+              <img src={this.props.barImage} />
+              <h1 className="barName">{this.props.barName}</h1>
+              <h3 className="city">{this.props.city}</h3>
+              <h5>{this.props.address}</h5>
+              <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
+            </div>
+
+            <div sm={3} className="bar-item">
+              {/* this is how you have to comment in React.  Must be inside Fragment */}
+              {/* anything inside the brackets can be JavaScript */}
+              <img src={this.props.barImage} />
+              <h1 className="barName">{this.props.barName}</h1>
+              <h3 className="city">{this.props.city}</h3>
+              <h5>{this.props.address}</h5>
+              <Link to={`/bars/${this.props.barName}`}><Button className="btn-large" id="skip-button">SKIP THE LINE</Button></Link>
+            </div>
           </div>
-        </Col>
+        </div>
       </Fragment>
     )
   }

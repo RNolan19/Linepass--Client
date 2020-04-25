@@ -12,11 +12,11 @@ import Bar from '../Bar'
 import AddBar from '../AddBar'
 import Homepage from '../Homepage'
 import Lincoln from './lincoln.jpg'
-import Broadway from './the broadway.jpeg'
-import Loco from './loco.jpg'
-import Stats from './stats3.jpg'
-import Capo from './Capo.jpg'
-import Legal from './legal.jpg'
+// import Broadway from './the broadway.jpeg'
+// import Loco from './loco.jpg'
+// import Stats from './stats3.jpg'
+// import Capo from './Capo.jpg'
+// import Legal from './legal.jpg'
 
 import NewBar from '../NewBar'
 import BarPage from '../BarPage'
@@ -96,12 +96,6 @@ class App extends Component {
             <div>
               <Header user={user} />
               <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway'/>
-              <Bar barImage={Broadway} barName='The Broadway' city='South Boston' address='726 East Broadway'/>
-              <Bar barImage={Loco} barName='Loco Taqueria' city='South Boston' address='412 West Broadway'/>
-              <hr className='hr-large'></hr>
-              <Bar barImage={Stats} barName='STATS Bar & Grille' city='South Boston' address='77 Dorchester Street'/>
-              <Bar barImage={Capo} barName='Capo Restaurant' city='South Boston' address='443 West Broadway'/>
-              <Bar barImage={Legal} barName='Legal Harborside' city='Seaport' address='270 Northern Ave'/>
               <hr className='hr-large'></hr>
               <ul className="added-bar-container">
                 {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
