@@ -10,7 +10,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import Bar from '../Bar'
 import AddBar from '../AddBar'
-import Homepage from '../Homepage'
+// import Homepage from '../Homepage'
 import Lincoln from './lincoln.jpg'
 // import Broadway from './the broadway.jpeg'
 // import Loco from './loco.jpg'
@@ -89,13 +89,8 @@ class App extends Component {
         <main className="main">
           <Route exact path='/' render={() => (
             <div>
-              <Homepage />
-            </div>
-          )} />
-          <Route exact path='/bars' render={() => (
-            <div>
               <Header user={user} />
-              <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway'/>
+              <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln'/>
               <hr className='hr-large'></hr>
               <ul className="added-bar-container">
                 {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}

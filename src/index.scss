@@ -14,7 +14,7 @@ html {
 
     &:hover {
       text-decoration: none;
-      color: rgba(137, 196, 244, 1);
+      color: #D8C060;
     }
   }
 }
@@ -37,7 +37,7 @@ body {
   height: 100vh;
   background-image: url('./img/line3.jpg');
   background-size: cover;
-  color: white;
+  color: #D8C060;
   font-family: 'Playfair Display SC', serif;
 
   display: flex;
@@ -74,7 +74,7 @@ body {
 
 .header_link-box {
   font-size: 4rem;
-  color: white;
+  color: #D8C060;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -93,7 +93,6 @@ body {
 
     &:hover {
       text-decoration: none;
-      color: rgba(137, 196, 244, 1);
     }
 }
 
@@ -106,23 +105,67 @@ body {
     }
     &:hover {
     text-decoration: none;
-    color: rgba(137, 196, 244, 1);
   }
 }
 
 /////////////////////////
 // Buttons
-.btn-babyblue {
-  color: black;
-  font-size: 2.5rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  display: inline-block;
-  background-color: rgba(137, 196, 244, 1);
-  padding: 2.5rem 2rem;
-  border-radius: 100rem;
+.btn {
 
-  align-self: center;
+  &,
+  &:link,
+  &:visited {
+  background-color: white;
+  border-radius: 100px;
+  font-size: 2rem;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  text-decoration: none;
+
+  transition: all .2s;
+  position: relative;
+
+  a {
+    color: #777;
+  }
+}
+
+&:hover {
+  box-shadow: 0 2rem 2rem rgba(black, .2);
+  transform: translateY(-3px);
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(1px);
+    box-shadow: 0 .5rem 1rem rgba(black,.2);
+  }
+
+  &::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+}
+
+  &::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: white;
+
+  transition: all .4s;
+}
+
 }
 
 //////////////////////////////////////////////
@@ -135,16 +178,32 @@ body {
 
 }
 
-.bar-header {
+.bar_header {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  &-quote {
+    font-size: 1rem;
+
   text-align: center;
-  padding: 4rem 0;
   text-transform: uppercase;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 600;
-  color: rgba(0,0,0, .7);
   font-family: 'Playfair SC';
 
-  padding: 12rem 0 5rem 0;
+  padding: 12rem 0 1rem 0;
+}
+
+    &-author {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Playfair SC';
+
+  }
 }
 
 
@@ -165,29 +224,105 @@ body {
 
   img {
   width: 45rem;
+  padding: 1rem;
   height: 50rem;
 }
 }
 
+///////////////////////////////////////////CARDS
 .card {
+  background-color: rgba(228, 233, 237, 1);
+  border: none;
   width: 45rem;
-  height: 50rem;
-  margin-bottom: 8rem;
+  padding: 1rem;
+  height: 55rem;
+  margin-top: 4rem;
+  margin-bottom: 12rem;
 
+  perspective: 150rem;
+  position: relative;
 
-  &-front {
+  &_side {
     width: 45rem;
-    height: 50rem;
-    background-color: black;
-    color: rgba(137, 196, 244, 1);
-    font-size: 5rem;
+    padding: 1rem;
+    height: 55rem;
 
-    font-family: 'Playfair Display SC', serif;
-    text-align: center;
-    padding: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
 
+    border-radius: 3px;
+    // this hides the back of the card from sight
+    backface-visibility: hidden;
+    transition: all .8s ease;
+
+
+    &-front {
+
+ //      background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ // background-blend-mode: multiply,multiply;
+     background: black;
+      color: #D8C060;
+
+      font-family: 'Playfair Display SC', serif;
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+
+    &-back {
+      background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+      transform: rotateY(-180deg);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &:hover &_side-front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &_side-back {
+    transform: rotateY(0);
+  }
+
+
+/////////////// BACK of card
+&_cta {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  &-rate {
+    font-size: 3rem;
+  }
+  &-price {
+    font-size: 12rem;
+    margin-bottom: 4rem;
   }
 }
+
+///////////////FRONT of card
+  &_heading {
+    font-size: 8rem;
+    line-height: 7rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  &_details {
+    font-size: 2.5rem;
+  }
+}
+
 
 
 
