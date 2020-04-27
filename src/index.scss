@@ -2,27 +2,12 @@
 
 html {
   font-size: 62.5%;
-
-  a {
-    color: white;
-    text-decoration: none;
-
-    &:link,
-    &:visited {
-      text-decoration: none;
-    }
-
-    &:hover {
-      text-decoration: none;
-      color: #D8C060;
-    }
-  }
 }
 
 body {
-  // background-color: rgba(137, 196, 244, 1);
   box-sizing: border-box;
   padding: 2rem;
+  font-family: 'Playfair Display SC', serif;
 }
 
 .container {
@@ -43,7 +28,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+
+  a:link,
+  a:visited {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #D8C060;
+    font-weight: 600;
+  }
+  }
 
 .header_text-box {
   width: 100%;
@@ -64,7 +59,8 @@ body {
 }
 
 .heading_main {
-  font-size: 4rem;
+  font-size: 5rem;
+  color: #D8C060;
 
   margin-left: 3rem;
   margin-right: auto;
@@ -85,15 +81,6 @@ body {
 .header_link-1{
     font-size: 2.5rem;
     padding-bottom: 1.5rem;
-
-    &:link,
-    &:visited {
-      text-decoration: none;
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
 }
 
 .header_link-2{
@@ -127,10 +114,6 @@ body {
 
   transition: all .2s;
   position: relative;
-
-  a {
-    color: #777;
-  }
 }
 
 &:hover {
@@ -164,6 +147,11 @@ body {
   background-color: white;
 
   transition: all .4s;
+}
+
+&--blue {
+  background-color: blue;
+  color: #fff;
 }
 
 }
@@ -324,7 +312,61 @@ body {
 }
 
 
+/////////////////////////////////////////////////////
+// PRODUCT PAGE
+.product_page {
 
+  padding-top: 6rem;
+
+  display: flex;
+    flex-direction: column;
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 75vh;
+  }
+
+  &-photo {
+
+
+  }
+
+  &-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 4rem;
+    font-weight: 500;
+  }
+
+  &-name {
+    font-size: 6rem;
+    font-weight: 600;
+    border-bottom: black 2px solid;
+  }
+}
+
+.header_fixed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid inherit;
+  font-size: 2.5rem;
+
+  a {
+    color: #D8C060;
+    font-weight: 600;
+  }
+
+  &_logo {
+    margin-right: auto;
+    font-size: 4rem;
+  }
+}
 
 
 

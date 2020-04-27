@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 // import Nav from 'react-bootstrap/Nav'
 // import Navbar from 'react-bootstrap/Navbar'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // const authenticatedOptions = (
 //   <Fragment>
@@ -32,14 +32,13 @@ class Header extends React.Component {
       <Fragment>
         <header className="header">
           <div className="header_text-box">
-            <h1 className="heading_main">Linepass Boston</h1>
+            <Link to='/'><h1 className="heading_main">Linepass Boston</h1></Link>
             <a href="#" className="header_text-box-link">Our Story</a>
             <a href="#" className="header_text-box-link">Careers</a>
-            <a href="#" className="header_text-box-link">Add Your Bar</a>
+            <Link to='/add-my-bar'><a href="#" className="header_text-box-link">Add Your Bar</a></Link>
             <a href="#" className="header_text-box-link">Contact Us</a>
           </div>
           <div className="header_link-box">
-            <a href="#" className="header_link-1">Don&#39;t Be Like These Guys</a>
             <a href="#" className="header_link-2">Never Wait In Line Again</a>
           </div>
         </header>

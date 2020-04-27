@@ -19,8 +19,9 @@ import Lincoln from './lincoln.jpg'
 // import Legal from './legal.jpg'
 
 import NewBar from '../NewBar'
-import BarPage from '../BarPage'
+import ProductPage from '../ProductPage'
 import Footer from '../Footer'
+import HeaderFixed from '../Header/HeaderFixed'
 //
 // <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway'/>
 // <Bar barImage={Broadway} barName='The Broadway' city='South Boston' address='726 East Broadway'/>
@@ -89,22 +90,23 @@ class App extends Component {
         <main className="main">
           <Route exact path='/' render={() => (
             <div>
+              <HeaderFixed />
+              <ProductPage />
+              <Footer />
               <Header user={user} />
-              <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln'/>
+              <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <hr className='hr-large'></hr>
               <ul className="added-bar-container">
                 {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
               </ul>
-              <Footer />
 
             </div>
           )} />
 
           <Route exact path="/bars/:id" render={() => (
             <div>
-              <Header user={user} />
               <ul className="added-bar-container">
-                {Object.keys(this.state.bars).map(key => <BarPage key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
+                {Object.keys(this.state.bars).map(key => <ProductPage key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
               </ul>
               <Footer />
             </div>
