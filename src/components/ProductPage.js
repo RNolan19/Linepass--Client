@@ -29,15 +29,14 @@ class ProductPage extends React.Component {
             <div className="product_page-photo">
               {/* this is how you have to comment in React.  Must be inside Fragment */}
               {/* anything inside the brackets can be JavaScript */}
-              <img className="bar-image" src={Lincoln} />
+              <img className="product_page-photo" src={Lincoln} />
             </div>
             <div className="product_page-description">
               <p className="product_page-name">Darcy&#39;s Pub</p>
               <p className="product_page-city">Quincy</p>
               <p className="product_page-address">100 Adams Street</p>
               <p className="product_page-price">Price to Enter: $25</p>
-              <hr></hr>
-              <a className="btn btn--blue" id="skip-button" style={{ color: 'white' }}>Buy The Pass</a>
+              <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }}>Skip The Line</a>
             </div>
           </div>
         </div>

@@ -90,15 +90,15 @@ class App extends Component {
         <main className="main">
           <Route exact path='/' render={() => (
             <div>
-              <HeaderFixed />
-              <ProductPage />
-              <Footer />
               <Header user={user} />
               <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <hr className='hr-large'></hr>
               <ul className="added-bar-container">
                 {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
               </ul>
+              <HeaderFixed />
+              <ProductPage />
+              <Footer />
 
             </div>
           )} />
