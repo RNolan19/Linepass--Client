@@ -42,16 +42,12 @@ class App extends Component {
     }
   }
 
-  getBarInfo = (event) => {
-    console.log(event.target)
-  }
-
   addBars = bar => {
     // 1- take a copy of the existing state. Never want to directly mutate state
     const newBars = { ...this.state.bars }
     // 2- add our new Bar to the Bars variable
     // use timestamp to give each Bar a unique index ID
-    newBars[`bar${Date.now()}`] = bar
+    newBars[bar.name] = bar
     // 3- Set the new bars object to state w/ built in setState method
     this.setState({
       // pass it the piece you want to update, aka the bars state, + overwrite it
@@ -94,7 +90,7 @@ class App extends Component {
               <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <hr className='hr-large'></hr>
               <ul className="added-bar-container">
-                {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
+                {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} state={this.state.bars} getInfo={this.getBarInfo} />)}
               </ul>
               <HeaderFixed />
               <ProductPage />
@@ -105,15 +101,17 @@ class App extends Component {
 
           <Route exact path="/bars/:id" render={() => (
             <div>
-              <ul className="added-bar-container">
-                {Object.keys(this.state.bars).map(key => <ProductPage key={key} details={this.state.bars[key]} getInfo={this.getBarInfo} />)}
-              </ul>
-              <Footer />
+              <HeaderFixed />
+              <ProductPage details={this.state.bars[Object.keys(this.state.bars)[Object.keys(this.state.bars).length - 1]]} state={this.state.bars} getInfo={this.getBarInfo} />
+
             </div>
           )} />
 
           <Route exact path='/add-my-bar' render={() => (
-            <AddBar addBars={this.addBars} loadSampleBars={this.loadSampleBars}/>
+            <div>
+              <AddBar addBars={this.addBars} loadSampleBars={this.loadSampleBars} state={this.state.bars}/>
+              <ProductPage details={this.state.bars[Object.keys(this.state.bars)[Object.keys(this.state.bars).length - 1]]} state={this.state.bars} getInfo={this.getBarInfo} />
+            </div>
           )} />
 
           <Route path='/sign-up' render={() => (

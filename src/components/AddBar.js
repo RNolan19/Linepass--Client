@@ -27,7 +27,13 @@ class AddBar extends React.Component {
     event.currentTarget.reset()
   }
 
+  getBarInfo () {
+    console.log('I got clicked')
+  }
+
   render () {
+    console.log(this.props.details)
+    console.log(Object.keys(this.props.state)[Object.keys(this.props.state).length - 1])
     return (
       <div>
         <form className="add-my-bar" onSubmit={this.createBar}>
@@ -42,9 +48,10 @@ class AddBar extends React.Component {
           </select>
           <input name="image" ref={this.imageRef} type="text" placeholder="Image" />
           <button className="submit">+ Add My Bar</button>
+
         </form>
 
-        <button onClick={this.props.loadSampleBars} className='submit'>Load Sample Bars</button>
+        <button onClick={this.getBarInfo} className='submit'>Load Sample Bars</button>
       </div>
     )
   }

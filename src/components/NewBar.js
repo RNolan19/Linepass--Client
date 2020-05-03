@@ -19,6 +19,11 @@ import { Link } from 'react-router-dom'
 // </div>
 
 class NewBar extends React.Component {
+  handleClick = (event) => {
+    const barName = event.currentTarget.dataset.name
+    console.log(barName)
+  }
+
   render () {
     return (
       <Fragment>
@@ -42,7 +47,7 @@ class NewBar extends React.Component {
                   <p className="card_cta-rate"> Daily Rate</p>
                   <p className="card_cta-price">$20</p>
                 </div>
-                <Link to={`/bars/${this.props.details.name}`}><button href="#" className="btn">Skip The Line</button></Link>
+                <Link to={`/bars/${this.props.details.name}`}><button data-name={this.props.details.name} href="#" className="btn" onClick={this.handleClick}>Skip The Line</button></Link>
               </div>
             </div>
           </div>

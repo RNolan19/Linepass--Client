@@ -11,6 +11,11 @@ import { Link } from 'react-router-dom'
 class Bar extends React.Component {
   // Returns whatever is inside the parantheses after Return
   // can't return sibling elements. Wrap everything in a Fragment tag
+  handleClick (event) {
+    const barName = event.currentTarget.dataset.name
+    console.log(barName)
+    return barName
+  }
 
   render () {
     return (
@@ -42,7 +47,7 @@ class Bar extends React.Component {
                     <p className="card_cta-rate"> Daily Rate</p>
                     <p className="card_cta-price">${this.props.price}</p>
                   </div>
-                  <Link to={`/bars/${this.props.barName}`}><button href="#" className="btn">Skip The Line</button></Link>
+                  <Link to={`/bars/${this.props.barName}`}><button data-name={this.props.barName} href="#" className="btn" onClick={this.handleClick}>Skip The Line</button></Link>
                 </div>
               </div>
 

@@ -21,7 +21,12 @@ import Lincoln from './App/lincoln.jpg'
 
 class ProductPage extends React.Component {
   render () {
-    console.log(this.props.details)
+    console.log(this.props.state)
+    const orderIds = Object.keys(this.props.state)
+    console.log(orderIds)
+    const product = orderIds.filter(name => name === this.props.state.name)
+    console.log(product)
+
     return (
       <Fragment>
         <div className="product_page">
@@ -32,11 +37,12 @@ class ProductPage extends React.Component {
               <img className="product_page-photo" src={Lincoln} />
             </div>
             <div className="product_page-description">
-              <p className="product_page-name">Darcy&#39;s Pub</p>
+              <p className="product_page-name">{orderIds.filter(key => key === this.props.state.name)}</p>
               <p className="product_page-city">Quincy</p>
               <p className="product_page-address">100 Adams Street</p>
-              <p className="product_page-price">Price to Enter: $25</p>
-              <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }}>Skip The Line</a>
+              <p className="product_page-price">Daily LinePass: $25</p>
+              <p className="product_page-price">Monthly LinePass: $25</p>
+              <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }} onClick={this.props.getBarInfo}>Skip The Line</a>
             </div>
           </div>
         </div>
