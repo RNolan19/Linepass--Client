@@ -5,7 +5,7 @@ import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 
 class SignIn extends Component {
   constructor () {
@@ -33,7 +33,7 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/bars'))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '' })
@@ -49,8 +49,8 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+      <section className="signup-section">
+        <div className="signup-container">
           <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
@@ -75,15 +75,12 @@ class SignIn extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
+            <button className="homepage-button">SUBMIT</button>
           </Form>
+
+          <a href='#sign-up'>Don&#39;t Have An Account Yet? Sign Up Here!</a>
         </div>
-      </div>
+      </section>
     )
   }
 }

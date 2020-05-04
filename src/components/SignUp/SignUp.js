@@ -5,7 +5,7 @@ import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 
 class SignUp extends Component {
   constructor () {
@@ -35,7 +35,7 @@ class SignUp extends Component {
         message: messages.signUpSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/bars'))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '', passwordConfirmation: '' })
@@ -51,13 +51,13 @@ class SignUp extends Component {
     const { email, password, passwordConfirmation } = this.state
 
     return (
-      <div className="row">
-        <div className="col-sm-10 col-md-4 mx-auto mt-5">
+      <section className="signup-section">
+        <div className="signup-container">
           <h3>Sign Up</h3>
           <Form class='sign-up' onSubmit={this.onSignUp}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
-              <Form.Control
+              <Form.Control className="form"
                 required
                 type="email"
                 name="email"
@@ -78,25 +78,22 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="passwordConfirmation">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label>Password CONFIRMATION</Form.Label>
               <Form.Control
                 required
                 name="passwordConfirmation"
                 value={passwordConfirmation}
                 type="password"
-                placeholder="Confirm Password"
+                placeholder="CONFIRM Password"
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
+            <button className="homepage-button">SUBMIT</button>
           </Form>
+
+          <a href='#sign-in'>Already Have An Account? Sign In Here!</a>
         </div>
-      </div>
+      </section>
     )
   }
 }

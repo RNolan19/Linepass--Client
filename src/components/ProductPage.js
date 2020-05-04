@@ -21,12 +21,6 @@ import Lincoln from './App/lincoln.jpg'
 
 class ProductPage extends React.Component {
   render () {
-    console.log(this.props.state)
-    const orderIds = Object.keys(this.props.state)
-    console.log(orderIds)
-    const product = orderIds.filter(name => name === this.props.state.name)
-    console.log(product)
-
     return (
       <Fragment>
         <div className="product_page">
@@ -37,7 +31,7 @@ class ProductPage extends React.Component {
               <img className="product_page-photo" src={Lincoln} />
             </div>
             <div className="product_page-description">
-              <p className="product_page-name">{orderIds.filter(key => key === this.props.state.name)}</p>
+              <p className="product_page-name">Test</p>
               <p className="product_page-city">Quincy</p>
               <p className="product_page-address">100 Adams Street</p>
               <p className="product_page-price">Daily LinePass: $25</p>

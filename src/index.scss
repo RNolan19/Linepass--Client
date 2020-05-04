@@ -15,6 +15,148 @@ body {
     min-height: 50rem;
 }
 
+////////////////////////////////////////
+//Variables
+$color-primary: #D8C060;
+
+
+/////////////////////////////////////////
+// Homepage
+.homepage-section {
+  position: relative;
+  // border: 1px black solid;
+  height: 100vh;
+}
+
+.homepage-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 75vh;
+  width: 75vw;
+  background-color: black;
+  // border: 1px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  text-align: center;
+
+  outline: 1.5rem solid #D8C060;
+  outline-offset: 2rem;
+}
+
+.homepage-items{
+  color: #D8C060;
+
+  &_header {
+    font-size: 10rem;
+    margin-top: 13rem;
+    margin-bottom: 3rem;
+  }
+
+  &_tagline {
+    font-size: 5rem;
+  }
+
+  &_links {
+    font-size: 3rem;
+    margin-top: 15rem;
+    color: white;
+
+    display: flex;
+    justify-content: space-around;
+
+    a:link,
+    a:visited {
+      color: #D8C060;
+    }
+
+    a:hover {
+      color: #fff;
+      font-weight: 500;
+    }
+
+  }
+}
+
+
+
+/////////////////////////////////////////////
+// Sign Up
+.signup-section {
+  position: relative;
+  // border: 1px black solid;
+  height: 100vh;
+
+}
+
+.signup-container {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  // width: 50vw;
+
+  height: 50vh;
+  width: 35vw;
+  // background-color: black;
+
+  outline: 1.5rem solid #D8C060;
+  outline-offset: 2rem;
+  // display: flex;
+  // justify-content: center;
+  // align-items: space-around;
+  // text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+
+  h3 {
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  a:link,
+  a:visited {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.75rem;
+    color: black;
+    margin-left: 13rem;
+    margin-top: 2rem;
+    font-weight: 500;
+  }
+
+
+
+  .sign-up {
+    font-size: 3rem;
+    border: none;
+
+    & input {
+      color: black;
+      padding: 0 2.5rem;
+    }
+  }
+
+  .form-group  {
+
+  input {
+    border: none;
+    border-bottom: 1px solid black;
+    color: black;
+    padding: 2rem 0;
+  }
+}
+
+.form-control {
+  color: black;
+  font-size: 2rem;
+}
+
+}
+
 
 ///////////////////////////////////////////
 ///Header
@@ -97,6 +239,15 @@ body {
 
 /////////////////////////
 // Buttons
+.homepage-button {
+  background: black;
+  color: $color-primary;
+  border-radius: 100px;
+  padding: 1rem 4rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
 .btn {
 
   &,
@@ -436,57 +587,9 @@ body {
 
 }
 
-.homepage-container {
-  align-items: center;
-  background-image: url('./components/babyblue.png');
-  border: 6px solid #002366;
-  box-shadow: 15px 10px 5px #002366;
-  display: flex;
-  justify-content: center;
-  height: 75vh;
-  margin: auto;
-  margin-bottom: auto;
-  margin-top: 5%;
-  text-align: center;
-  width: 75%;
-
-  .tsa {
-    color: #002366;
-    font-size: 2.2rem;
-    font-weight: bold;
-  }
-
-  .homepage-items {
-  }
-
-  .title {
-    color: #002366;
-    // letter-spacing: .25em;
-    font-size: 9rem;
-    font-weight: bold;
-    text-shadow: 1px 5px white;
-  }
-
-  .enter {
-    border: 4px #002366 solid;
-    color: #002366;
-    font-size: 2.5rem;
-    margin-top: 5%;
-
-    &:hover {
-      background-color: #002366;
-      color: white;
-    }
-  }
-
-  .links {
-
-  }
-}
 
 .footer-container {
   align-items: center;
-  background-image: url('./components/babyblue.png');
   color: #002366;;
   display: flex;
   font-weight: bold;
@@ -519,11 +622,7 @@ body {
 //   text-align: center;
 //   width: 600px;
 //
-//   .sign-up {
-//     border: 2px solid black;
-//     width: 300px;
-//     height: 300px;
-// }
+
 //
 // nav-link {
 //   font-size: 5rem;
