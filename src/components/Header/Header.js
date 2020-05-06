@@ -39,7 +39,7 @@ class Header extends React.Component {
             <a href="#" className="header_text-box-link">Contact Us</a>
           </div>
           <div className="header_link-box">
-            <a href="#" className="header_link-2">Never Wait In Line Again</a>
+            <a href="#/bars" className="header_link-2">Never Wait In Line Again</a>
           </div>
         </header>
       </Fragment>

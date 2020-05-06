@@ -18,6 +18,7 @@ body {
 ////////////////////////////////////////
 //Variables
 $color-primary: #D8C060;
+$light-grey: #D3D3D3;
 
 
 /////////////////////////////////////////
@@ -25,7 +26,8 @@ $color-primary: #D8C060;
 .homepage-section {
   position: relative;
   // border: 1px black solid;
-  height: 100vh;
+  height: 95vh;
+  background-color: $light-grey;
 }
 
 .homepage-container {
@@ -34,8 +36,8 @@ $color-primary: #D8C060;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  height: 75vh;
-  width: 75vw;
+  height: 65vh;
+  width: 65vw;
   background-color: black;
   // border: 1px black solid;
   display: flex;
@@ -84,27 +86,29 @@ $color-primary: #D8C060;
 
 
 /////////////////////////////////////////////
-// Sign Up
+// Sign Up + Sign In Form
 .signup-section {
   position: relative;
   // border: 1px black solid;
-  height: 100vh;
+  height: 95vh;
+  background-color: $light-grey;
 
 }
 
 .signup-container {
+  background-color: white;
   position: absolute;
   left: 50%;
   top: 40%;
   transform: translate(-50%, -50%);
   // width: 50vw;
 
-  height: 50vh;
+  height: 55vh;
   width: 35vw;
   // background-color: black;
 
   outline: 1.5rem solid #D8C060;
-  outline-offset: 2rem;
+  // outline-offset: 2rem;
   // display: flex;
   // justify-content: center;
   // align-items: space-around;
@@ -112,7 +116,9 @@ $color-primary: #D8C060;
   font-size: 2.5rem;
   font-weight: 600;
 
+
   h3 {
+    margin-top: 2rem;
     font-size: 5rem;
     text-align: center;
   }
@@ -137,7 +143,12 @@ $color-primary: #D8C060;
     & input {
       color: black;
       padding: 0 2.5rem;
+
     }
+  }
+
+  .form-label {
+    margin-left: 1rem;
   }
 
   .form-group  {
@@ -147,6 +158,7 @@ $color-primary: #D8C060;
     border-bottom: 1px solid black;
     color: black;
     padding: 2rem 0;
+    margin-left: 1rem;
   }
 }
 
@@ -244,8 +256,10 @@ $color-primary: #D8C060;
   color: $color-primary;
   border-radius: 100px;
   padding: 1rem 4rem;
-  width: 100%;
+  width: 80%;
   margin-top: 2rem;
+
+  margin-left: 10%;
 }
 
 .btn {
@@ -315,7 +329,7 @@ $color-primary: #D8C060;
 //////////////////////////////////////////////
 ///Bars
 .bar-section {
-  background-color: rgba(228, 233, 237, 1);
+  background-color: white;
   // display: flex;
   // flex-wrap: wrap;
 

@@ -8,18 +8,18 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
-import Bar from '../Bar'
-import AddBar from '../AddBar'
+import Bar from '../Bars/Bar'
+import CreateBar from '../Bars/CreateBar'
 import Homepage from '../Homepage'
-import Lincoln from './lincoln.jpg'
+// import Lincoln from './lincoln.jpg'
 // import Broadway from './the broadway.jpeg'
 // import Loco from './loco.jpg'
 // import Stats from './stats3.jpg'
 // import Capo from './Capo.jpg'
 // import Legal from './legal.jpg'
 
-import NewBar from '../NewBar'
-import ProductPage from '../ProductPage'
+import NewBar from '../Bars/NewBar'
+// import ProductPage from '../Bars/ProductPage'
 import Footer from '../Footer'
 import HeaderFixed from '../Header/HeaderFixed'
 //
@@ -37,8 +37,7 @@ class App extends Component {
 
     this.state = {
       user: null,
-      alerts: [],
-      bars: {}
+      alerts: []
     }
   }
 
@@ -93,29 +92,25 @@ class App extends Component {
           <Route exact path='/bars' render={() => (
             <div>
               <Header user={user} />
-              <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
+              <Bar barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <hr className='hr-large'></hr>
-              <ul className="added-bar-container">
-                {Object.keys(this.state.bars).map(key => <NewBar key={key} details={this.state.bars[key]} state={this.state.bars} getInfo={this.getBarInfo} />)}
-              </ul>
               <HeaderFixed />
-              <ProductPage />
               <Footer />
 
             </div>
           )} />
 
-          <Route exact path="/bars/:id" render={() => (
+          < Route exact path="/bars/:id" user={user} match={match} render={() => (
             <div>
-              <HeaderFixed />
-              <ProductPage details={this.state.bars[Object.keys(this.state.bars)[Object.keys(this.state.bars).length - 1]]} state={this.state.bars} getInfo={this.getBarInfo} />
+              <HeaderFixed user={user}/>
+              <NewBar alert={this.alert} user={user} />
             </div>
           )} />
 
-          <Route exact path='/add-my-bar' render={() => (
+          <Route exact path='/add-my-bar' user={user} render={() => (
             <div>
-              <AddBar addBars={this.addBars} loadSampleBars={this.loadSampleBars} state={this.state.bars}/>
-              <ProductPage details={this.state.bars[Object.keys(this.state.bars)[Object.keys(this.state.bars).length - 1]]} state={this.state.bars} getInfo={this.getBarInfo} />
+              <HeaderFixed />
+              <CreateBar alert={this.alert} user={user} addBars={this.addBars} loadSampleBars={this.loadSampleBars} state={this.state.bars}/>
             </div>
           )} />
 

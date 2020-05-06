@@ -20,7 +20,7 @@ class Bar extends React.Component {
   render () {
     return (
       <Fragment>
-        <div className="bar-section">
+        <div className="bar-section" id="bar-section">
           <div className="bar_header">
             <h1 className="bar_header-quote">You Wait In 100% Of The Lines You Don&#39;t Pay To Skip</h1>
             <p className="bar_header-author">-Wayne Gretzky</p>

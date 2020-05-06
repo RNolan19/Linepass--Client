@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 // import { Link } from 'react-router-dom'
 // import Button from 'react-bootstrap/Button'
-import Lincoln from './App/lincoln.jpg'
+// import Lincoln from './App/lincoln.jpg'
 
 // <div className="barpage-container">
 //   <div className="bar-image">
@@ -28,7 +28,7 @@ class ProductPage extends React.Component {
             <div className="product_page-photo">
               {/* this is how you have to comment in React.  Must be inside Fragment */}
               {/* anything inside the brackets can be JavaScript */}
-              <img className="product_page-photo" src={Lincoln} />
+              <img className="product_page-photo" />
             </div>
             <div className="product_page-description">
               <p className="product_page-name">Test</p>
