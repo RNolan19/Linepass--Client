@@ -492,30 +492,30 @@ $light-grey: #D3D3D3;
   height: 100vh;
 
 
-  &-item {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 12rem;
+&_container {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-around;
+}
 
-  }
 
   &-photo {
       height: 55rem;
-      width: 45rem;
+      width: 75rem;
       align-self: flex-end;
-      outline: 1.5rem solid #D8C060;
-      outline-offset: 2rem;
+      outline: 1.5rem solid $color-primary;
 
 
   }
 
   &-description {
+    height: 55rem;
     text-align: center;
     font-size: 3rem;
     font-weight: 500;
     color: black;
     margin-top: -2rem;
+    align-self: center;
   }
 
   &-name {

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 // import { Link } from 'react-router-dom'
 // import Button from 'react-bootstrap/Button'
-// import Lincoln from './App/lincoln.jpg'
+import line2 from '../../img/line4.jpg'
 
 // <div className="barpage-container">
 //   <div className="bar-image">
@@ -24,19 +24,21 @@ class ProductPage extends React.Component {
     return (
       <Fragment>
         <div className="product_page">
-          <div className="product_page-item">
+          <div className="product_page_container">
+
             <div className="product_page-photo">
               {/* this is how you have to comment in React.  Must be inside Fragment */}
               {/* anything inside the brackets can be JavaScript */}
-              <img className="product_page-photo" />
+              <img className="product_page-photo" src={line2} />
             </div>
+
             <div className="product_page-description">
               <p className="product_page-name">Test</p>
               <p className="product_page-city">Quincy</p>
               <p className="product_page-address">100 Adams Street</p>
               <p className="product_page-price">Daily LinePass: $25</p>
               <p className="product_page-price">Monthly LinePass: $25</p>
-              <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }} onClick={this.props.getBarInfo}>Skip The Line</a>
+              <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }}>Skip The Line</a>
             </div>
           </div>
         </div>

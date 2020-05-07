@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
+import line2 from '../../img/line4.jpg'
 // import Lincoln from './App/lincoln.jpg'
 // import { Col } from 'react-bootstrap'
 // import Button from 'react-bootstrap/Button'
@@ -20,28 +21,42 @@ import apiUrl from '../../apiConfig.js'
 // </div>
 
 const NewBar = props => {
-  const [bar, setBar] = useState(null)
-  console.log(props.user)
+  const [bar, setBar] = useState({ name: '', city: '', address: '', price: '' })
+  console.log(props, bar)
 
   useEffect(() => {
     axios({
-      url: (`${apiUrl}/bars/${props.match.params.id}`),
+      url: `${apiUrl}/bars/${props.match.params.id}`,
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${props.user.token}`
       }
     })
-    console.log(bar)
       .then(res => setBar(res.data.bar))
       .catch(() => props.alert({ heading: 'Error', message: 'Couldn\'t retrieve the requested artwork', variant: 'danger' }))
   }, [])
 
   return (
     <div>
-      <p>bar.name</p>
-      <p>bar.price</p>
-      <p>bar.address</p>
-      <p>bar.city</p>
+      <div className="product_page">
+        <div className="product_page_container">
+
+          <div className="product_page-photo">
+            {/* this is how you have to comment in React.  Must be inside Fragment */}
+            {/* anything inside the brackets can be JavaScript */}
+            <img className="product_page-photo" src={line2} />
+          </div>
+
+          <div className="product_page-description">
+            <p className="product_page-name">{bar.name}</p>
+            <p className="product_page-city">{bar.city}</p>
+            <p className="product_page-address">{bar.address}</p>
+            <p className="product_page-price">{bar.price}</p>
+            <p className="product_page-price">Monthly LinePass: $25</p>
+            <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }}>Skip The Line</a>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

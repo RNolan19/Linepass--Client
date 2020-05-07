@@ -11,15 +11,9 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Bar from '../Bars/Bar'
 import CreateBar from '../Bars/CreateBar'
 import Homepage from '../Homepage'
-// import Lincoln from './lincoln.jpg'
-// import Broadway from './the broadway.jpeg'
-// import Loco from './loco.jpg'
-// import Stats from './stats3.jpg'
-// import Capo from './Capo.jpg'
-// import Legal from './legal.jpg'
 
 import NewBar from '../Bars/NewBar'
-// import ProductPage from '../Bars/ProductPage'
+import ProductPage from '../Bars/ProductPage'
 import Footer from '../Footer'
 import HeaderFixed from '../Header/HeaderFixed'
 //
@@ -95,16 +89,17 @@ class App extends Component {
               <Bar barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <hr className='hr-large'></hr>
               <HeaderFixed />
+              <ProductPage />
               <Footer />
 
             </div>
           )} />
 
-          < Route exact path="/bars/:id" user={user} match={match} render={() => (
-            <div>
-              <HeaderFixed user={user}/>
-              <NewBar alert={this.alert} user={user} />
-            </div>
+          < Route exact path="/bars/:id" user={user} render={(props) => (
+            <Fragment>
+              <HeaderFixed/>
+              <NewBar {...props} alert={this.alert} user={user} />
+            </Fragment>
           )} />
 
           <Route exact path='/add-my-bar' user={user} render={() => (
