@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react'
+import axios from 'axios'
+import apiUrl from '../../apiConfig.js'
 // import { Link } from 'react-router-dom'
 // import Button from 'react-bootstrap/Button'
 import line2 from '../../img/line4.jpg'
@@ -19,32 +21,52 @@ import line2 from '../../img/line4.jpg'
 //   </div>
 // </div>
 
-class ProductPage extends React.Component {
-  render () {
-    return (
-      <Fragment>
-        <div className="product_page">
-          <div className="product_page_container">
+const ProductPage = props => {
+  const destroy = () => {
+    axios({
+      url: `${apiUrl}/artworks/${props.match.params.id}`,
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${props.user.token}`
+      }
+    })
+      .then(() => {
+        props.alert({ heading: 'Success', message: 'Listing Deleted', variant: 'warning' })
+        props.history.push('/artworks')
+      })
+      .catch(() => props.alert({ heading: 'Uh Oh', message: 'Something when wrong!', variant: 'danger' }))
+  }
 
-            <div className="product_page-photo">
-              {/* this is how you have to comment in React.  Must be inside Fragment */}
-              {/* anything inside the brackets can be JavaScript */}
-              <img className="product_page-photo" src={line2} />
-            </div>
+  return (
+    <Fragment>
+      <div className="product_page">
+        <div className="product_page_container">
 
-            <div className="product_page-description">
-              <p className="product_page-name">Test</p>
-              <p className="product_page-city">Quincy</p>
-              <p className="product_page-address">100 Adams Street</p>
-              <p className="product_page-price">Daily LinePass: $25</p>
-              <p className="product_page-price">Monthly LinePass: $25</p>
-              <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }}>Skip The Line</a>
+          <div className="product_page-item product_page-photo">
+            {/* this is how you have to comment in React.  Must be inside Fragment */}
+            {/* anything inside the brackets can be JavaScript */}
+            <img className="product_page-photo" src={line2} />
+          </div>
+
+          <div className="product_page-item product_page-description">
+            <p className="product_page-name">Test</p>
+            <p className="product_page-city">Quincy</p>
+            <p className="product_page-address">100 Adams Street</p>
+            <p className="product_page-price">Daily LinePass: $25</p>
+            <p className="product_page-price">Monthly LinePass: $25</p>
+            <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }}>Skip The Line</a>
+            <hr></hr>
+            <div className="product_page_buttons">
+              <button href='/bars' className="back-btn">Back</button>
+              <button href='/bars' className="update-btn">Update</button>
+              <button href='/bars' className="delete-btn" onClick={ destroy }>Delete</button>
             </div>
           </div>
+
         </div>
-      </Fragment>
-    )
-  }
+      </div>
+    </Fragment>
+  )
 }
 
 export default ProductPage
