@@ -3,7 +3,6 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
 // import { Link } from 'react-router-dom'
 // import Button from 'react-bootstrap/Button'
-import line2 from '../../img/line4.jpg'
 
 // <div className="barpage-container">
 //   <div className="bar-image">
@@ -42,20 +41,25 @@ const ProductPage = props => {
       <div className="product_page">
         <div className="product_page_container">
 
-          <div className="product_page-item product_page-photo">
+          <div className="product_page-item product_page-card">
             {/* this is how you have to comment in React.  Must be inside Fragment */}
             {/* anything inside the brackets can be JavaScript */}
-            <img className="product_page-photo" src={line2} />
+            <div className="card_heading">
+              <p>The Eire Pub</p>
+            </div>
+            <div className="card_details">
+              <p>Quincy, MA </p>
+              <p>500 Adams Street</p>
+            </div>
           </div>
 
           <div className="product_page-item product_page-description">
-            <p className="product_page-name">Test</p>
-            <p className="product_page-city">Quincy</p>
-            <p className="product_page-address">100 Adams Street</p>
-            <p className="product_page-price">Daily LinePass: $25</p>
-            <p className="product_page-price">Monthly LinePass: $25</p>
-            <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }}>Skip The Line</a>
-            <hr></hr>
+            <div>
+              <p><em>&#39;You Wait In 100% of Lines You Don&#39;t Pay To Skip&#39;</em></p>
+              <p>-Wayne Gretzky</p>
+              <p>-Michael Scott</p>
+            </div>
+            <a className="btn btn--black product_page_buttons-black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30 Minute Line.  Thanks</a>
             <div className="product_page_buttons">
               <button href='/bars' className="back-btn">Back</button>
               <button href='/bars' className="update-btn">Update</button>

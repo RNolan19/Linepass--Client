@@ -1,243 +1,71 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 // cherry-picking which methods you want to use from react-dom
 import { render } from 'react-dom'
 // import Button from 'react-bootstrap/Button'
 // import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import apiUrl from '../../apiConfig'
 
 // this just provides dummy Bar Data or gives a way for me to add Bars by myself
 // NewBar displays all the bars that are added by users
 
-class Bar extends React.Component {
-  // Returns whatever is inside the parantheses after Return
-  // can't return sibling elements. Wrap everything in a Fragment tag
-  handleClick (event) {
+const Bar = props => {
+  const [bar, setBar] = useState([])
+
+  useEffect(() => {
+    axios({
+      url: `${apiUrl}/bars`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${props.user.token}`
+      }
+    })
+      .then(res => setBar(res.data.bars))
+      .catch(() => props.alert({ heading: 'Error', message: 'Couldn\'t retrieve the requested bar', variant: 'danger' }))
+  }, [])
+  console.log(bar)
+
+  const barsJsx = bar.map(bar => (
+
+    <div className="card" key={bar._id} as={'a'} href={`#/bars/${bar._id}`}>
+      <div className="card_side card_side-front">
+        <div className="card_heading">
+          <p>{bar.name}</p>
+        </div>
+        <div className="card_details">
+          <p className="city">{bar.city}</p>
+          <p>{bar.address}</p>
+        </div>
+      </div>
+
+      <div className="card_side card_side-back">
+        <div className="card_cta">
+          <div className="card_price">
+            <p className="card_cta-rate"> Daily Rate</p>
+            <p className="card_cta-price">${bar.price}</p>
+          </div>
+          <Link to={`#/bars/${bar._id}`}><button className="btn" onClick={handleClick}>Skip The Line</button></Link>
+        </div>
+      </div>
+    </div>
+  ))
+
+  const handleClick = event => {
     const barName = event.currentTarget.dataset.name
     console.log(barName)
     return barName
   }
 
-  render () {
-    return (
-      <Fragment>
-        <div className="bar-section" id="bar-section">
-          <div className="bar_header">
-            <h1 className="bar_header-quote">You Wait In 100% Of The Lines You Don&#39;t Pay To Skip</h1>
-            <p className="bar_header-author">-Wayne Gretzky</p>
-            <p className="bar_header-author">-Michael Scott</p>
-          </div>
-
-          <div className="bar-container">
-
-            <div className="card">
-              <div className="card_side card_side-front">
-                <div className="card_heading">
-                  <p>{this.props.barName}</p>
-                </div>
-                <div className="card_details">
-                  <p className="city">{this.props.city}</p>
-                  <p>{this.props.address}</p>
-                  <p>Very Busy</p>
-                </div>
-              </div>
-
-              <div className="card_side card_side-back">
-                <div className="card_cta">
-                  <div className="card_price">
-                    <p className="card_cta-rate"> Daily Rate</p>
-                    <p className="card_cta-price">${this.props.price}</p>
-                  </div>
-                  <Link to={`/bars/${this.props.barName}`}><button data-name={this.props.barName} href="#" className="btn" onClick={this.handleClick}>Skip The Line</button></Link>
-                </div>
-              </div>
-
-            </div>
-
-            <div className="card">
-              <div className="card_side card_side-front">
-                <div className="card_heading">
-                  <p>{this.props.barName}</p>
-                </div>
-                <div className="card_details">
-                  <p className="city">{this.props.city}</p>
-                  <p>{this.props.address}</p>
-                </div>
-              </div>
-
-              <div className="card_side card_side-back">
-                <div className="card_cta">
-                  <div className="card_price">
-                    <p className="card_cta-rate"> Daily Rate</p>
-                    <p className="card_cta-price">${this.props.price}</p>
-                  </div>
-                  <Link to={`/bars/${this.props.barName}`}><button href="#" className="btn">Skip The Line</button></Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card_side card_side-front">
-                <div className="card_heading">
-                  <p>{this.props.barName}</p>
-                </div>
-                <div className="card_details">
-                  <p className="city">{this.props.city}</p>
-                  <p>{this.props.address}</p>
-                </div>
-              </div>
-
-              <div className="card_side card_side-back">
-                <div className="card_cta">
-                  <div className="card_price">
-                    <p className="card_cta-rate"> Daily Rate</p>
-                    <p className="card_cta-price">${this.props.price}</p>
-                  </div>
-                  <Link to={`/bars/${this.props.link}`}><button className="btn">Skip The Line</button></Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card_side card_side-front">
-                <div className="card_heading">
-                  <p>{this.props.barName}</p>
-                </div>
-                <div className="card_details">
-                  <p className="city">{this.props.city}</p>
-                  <p>{this.props.address}</p>
-                  <p>Very Busy</p>
-                </div>
-              </div>
-
-              <div className="card_side card_side-back">
-                <div className="card_cta">
-                  <div className="card_price">
-                    <p className="card_cta-rate"> Daily Rate</p>
-                    <p className="card_cta-price">${this.props.price}</p>
-                  </div>
-                  <Link to={`/bars/${this.props.barName}`}><button href="#" className="btn">Skip The Line</button></Link>
-                </div>
-              </div>
-
-            </div>
-
-            <div className="card">
-              <div className="card_side card_side-front">
-                <div className="card_heading">
-                  <p>{this.props.barName}</p>
-                </div>
-                <div className="card_details">
-                  <p className="city">{this.props.city}</p>
-                  <p>{this.props.address}</p>
-                </div>
-              </div>
-
-              <div className="card_side card_side-back">
-                <div className="card_cta">
-                  <div className="card_price">
-                    <p className="card_cta-rate"> Daily Rate</p>
-                    <p className="card_cta-price">${this.props.price}</p>
-                  </div>
-                  <Link to={`/bars/${this.props.barName}`}><button href="#" className="btn">Skip The Line</button></Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card_side card_side-front">
-                <div className="card_heading">
-                  <p>{this.props.barName}</p>
-                </div>
-                <div className="card_details">
-                  <p className="city">{this.props.city}</p>
-                  <p>{this.props.address}</p>
-                </div>
-              </div>
-
-              <div className="card_side card_side-back">
-                <div className="card_cta">
-                  <div className="card_price">
-                    <p className="card_cta-rate"> Daily Rate</p>
-                    <p className="card_cta-price">${this.props.price}</p>
-                  </div>
-                  <Link to={`/bars/${this.props.link}`}><button className="btn">Skip The Line</button></Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card_side card_side-front">
-                <div className="card_heading">
-                  <p>{this.props.barName}</p>
-                </div>
-                <div className="card_details">
-                  <p className="city">{this.props.city}</p>
-                  <p>{this.props.address}</p>
-                  <p>Very Busy</p>
-                </div>
-              </div>
-
-              <div className="card_side card_side-back">
-                <div className="card_cta">
-                  <div className="card_price">
-                    <p className="card_cta-rate"> Daily Rate</p>
-                    <p className="card_cta-price">${this.props.price}</p>
-                  </div>
-                  <Link to={`/bars/${this.props.barName}`}><button href="#" className="btn">Skip The Line</button></Link>
-                </div>
-              </div>
-
-            </div>
-
-            <div className="card">
-              <div className="card_side card_side-front">
-                <div className="card_heading">
-                  <p>{this.props.barName}</p>
-                </div>
-                <div className="card_details">
-                  <p className="city">{this.props.city}</p>
-                  <p>{this.props.address}</p>
-                </div>
-              </div>
-
-              <div className="card_side card_side-back">
-                <div className="card_cta">
-                  <div className="card_price">
-                    <p className="card_cta-rate"> Daily Rate</p>
-                    <p className="card_cta-price">${this.props.price}</p>
-                  </div>
-                  <Link to={`/bars/${this.props.barName}`}><button href="#" className="btn">Skip The Line</button></Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card_side card_side-front">
-                <div className="card_heading">
-                  <p>{this.props.barName}</p>
-                </div>
-                <div className="card_details">
-                  <p className="city">{this.props.city}</p>
-                  <p>{this.props.address}</p>
-                </div>
-              </div>
-
-              <div className="card_side card_side-back">
-                <div className="card_cta">
-                  <div className="card_price">
-                    <p className="card_cta-rate"> Daily Rate</p>
-                    <p className="card_cta-price">${this.props.price}</p>
-                  </div>
-                  <Link to={`/bars/${this.props.link}`}><button className="btn">Skip The Line</button></Link>
-                </div>
-              </div>
-            </div>
-
-          </div>
+  return (
+    <Fragment>
+      <div className="bar-section" id="bar-section">
+        <div className="bar-container">
+          {barsJsx}
         </div>
-      </Fragment>
-    )
-  }
+      </div>
+    </Fragment>
+  )
 }
 
 //   <div sm={3} className="bar-item">

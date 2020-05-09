@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
-import line2 from '../../img/line4.jpg'
 
 // import Lincoln from './App/lincoln.jpg'
 // import { Col } from 'react-bootstrap'
@@ -23,6 +22,7 @@ import line2 from '../../img/line4.jpg'
 
 const NewBar = props => {
   const [bar, setBar] = useState({ name: '', city: '', address: '', price: '' })
+  const userId = props.user._id
   console.log(props, bar)
 
   useEffect(() => {
@@ -60,24 +60,35 @@ const NewBar = props => {
       <div className="product_page">
         <div className="product_page_container">
 
-          <div className="product_page-item product_page-photo">
+          <div className="product_page-item product_page-card">
             {/* this is how you have to comment in React.  Must be inside Fragment */}
             {/* anything inside the brackets can be JavaScript */}
-            <img className="product_page-photo" src={line2} />
+            <div className="card_heading">
+              <p>{bar.name}</p>
+            </div>
+            <div className="card_details">
+              <p>{bar.city}, MA </p>
+              <p>{bar.address}</p>
+              <p>Daily LinePass: ${bar.price}</p>
+            </div>
           </div>
 
           <div className="product_page-item product_page-description">
-            <p className="product_page-name">{bar.name}</p>
-            <p className="product_page-city">{bar.city}</p>
-            <p className="product_page-address">{bar.address}</p>
-            <p className="product_page-price">Daily LinePass: ${bar.price}</p>
-            <p className="product_page-price">Monthly LinePass: $25</p>
-            <a className="btn btn--black" id="skip-button" style={{ color: '#D8C060' }}>Skip The Line</a>
-            <hr></hr>
+            <div>
+              <p><em>&#39;You Wait In 100% of Lines You Don&#39;t Pay To Skip&#39;</em></p>
+              <p>-Wayne Gretzky</p>
+              <p>-Michael Scott</p>
+            </div>
+            <a className="btn btn--black product_page_buttons-black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30 Minute Line.  Thanks</a>
+            {console.log(props.user_id, bar.owner)}
             <div className="product_page_buttons">
               <a href='#/bars' className="back-btn">Back</a>
-              <button href='/bars' className="update-btn">Update</button>
-              <button className="delete-btn" onClick={ destroy }>Delete</button>
+              { userId === bar.owner ? (
+                <Fragment>
+                  <button href='/bars' className="update-btn">Update</button>
+                  <button className="delete-btn" onClick={ destroy }>Delete</button>
+                </Fragment>
+              ) : null}
             </div>
           </div>
 

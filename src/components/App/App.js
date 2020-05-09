@@ -13,7 +13,6 @@ import CreateBar from '../Bars/CreateBar'
 import Homepage from '../Homepage'
 
 import NewBar from '../Bars/NewBar'
-import ProductPage from '../Bars/ProductPage'
 import Footer from '../Footer'
 import HeaderFixed from '../Header/HeaderFixed'
 //
@@ -83,13 +82,10 @@ class App extends Component {
               <Homepage />
             </div>
           )} />
-          <Route exact path='/bars' render={() => (
+          <Route exact path='/bars' user={user} render={(props) => (
             <div>
               <Header user={user} />
-              <Bar barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
-              <hr className='hr-large'></hr>
-              <HeaderFixed />
-              <ProductPage />
+              <Bar {...props} alert={this.alert} user={user} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <Footer />
 
             </div>

@@ -360,6 +360,7 @@ $light-grey: #D3D3D3;
 }
 
 &--black {
+  display: block;
   background-color: black;
   font-size: 2.8rem;
   margin-top: 2.8rem;
@@ -544,11 +545,33 @@ $light-grey: #D3D3D3;
 }
 
 
-  &-photo {
+  &-card {
+      // background-color: black;
       height: 55rem;
-      width: 75rem;
-      align-self: flex-end;
-      outline: 1.5rem solid $color-primary;
+      width: 45rem;
+      // align-self: flex-end;
+      // outline: 1.5rem solid $color-primary;
+      //
+      // color: $color-primary;
+      font-size: 6rem;
+      //
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-around;
+      // align-items: center;
+      background: black;
+       color: #D8C060;
+
+       font-family: 'Playfair Display SC', serif;
+       text-align: center;
+
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: center;
+
+       outline: 1.5rem solid #D8C060;
+       outline-offset: 2rem;
 
 
   }
@@ -560,13 +583,22 @@ $light-grey: #D3D3D3;
     font-weight: 500;
     color: black;
     margin-top: -2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &_buttons {
-    margin-top: 10rem;
+    margin-top: 5rem;
     display: flex;
     font-size: 2.25rem;
     text-align: center;
+
+    &-black {
+      margin-bottom: -23rem;
+    }
 
   }
 
