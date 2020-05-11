@@ -6,13 +6,13 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 2rem;
+  padding: 3rem;
   font-family: 'Playfair Display SC', serif;
 }
 
 .container {
-    max-width: 179rem;
-    min-height: 50rem;
+    // max-width: 179rem;
+    // min-height: 50rem;
 }
 
 ////////////////////////////////////////
@@ -376,6 +376,7 @@ $light-grey: #D3D3D3;
 ///Bars
 .bar-section {
   background-color: white;
+  padding: 15rem 0 15rem 0;
   // display: flex;
   // flex-wrap: wrap;
 
@@ -435,12 +436,12 @@ $light-grey: #D3D3D3;
 
 ///////////////////////////////////////////CARDS
 .card {
-  background-color: rgba(228, 233, 237, 1);
+
   border: none;
   width: 45rem;
   padding: 1rem;
   height: 55rem;
-  margin-top: 4rem;
+  margin-top: 8rem;
   margin-bottom: 12rem;
 
   perspective: 150rem;
@@ -482,7 +483,7 @@ $light-grey: #D3D3D3;
 
 
     &-back {
-      background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+      background-image: linear-gradient(to bottom right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
       transform: rotateY(-180deg);
 
       display: flex;
@@ -490,6 +491,9 @@ $light-grey: #D3D3D3;
       justify-content: center;
       align-items: center;
       text-align: center;
+
+      outline: 1.5rem solid $color-primary;
+      outline-offset: 2rem;
     }
   }
 
@@ -627,7 +631,56 @@ $light-grey: #D3D3D3;
   }
 }
 
+///////////////////////////////////////
+///  ADD BAR FORM
 
+
+.add_bar_page {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &-header {
+    font-size: 5rem;
+    margin-top: 10rem;
+  }
+
+  &-text {
+    font-size: 2rem;
+    padding: 3rem 0 5rem 0;
+  }
+}
+.add_bar_form {
+  border: 1px black solid;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-image: linear-gradient(to bottom right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  color: black;
+
+
+  & input {
+    color: black;
+    border: none;
+    border: $color-primary 1px dashed;
+    background-color: white;
+
+  }
+
+  ::placeholder {
+    color: black;
+  }
+
+  & button {
+    margin: 2rem 0;
+  }
+}
 
 
 
@@ -687,16 +740,29 @@ $light-grey: #D3D3D3;
 
 
 .footer-container {
-  align-items: center;
-  color: #002366;;
-  display: flex;
-  font-weight: bold;
-  justify-content: center;
-  margin-top: 6%;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: $color-primary;
+    text-align: center;
+    font-size: 5rem;
 
-  .about {
-    font-size: 1.35rem;
+  .footer-items {
+    margin: 2rem 0 3rem 0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+
+    a:link,
+    a:visited {
+      color: white;
+    }
+
+    a:hover {
+      color: $color-primary;
+      font-weight: 500;
+    }
+
   }
 }
 

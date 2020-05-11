@@ -1,5 +1,5 @@
 .alert {
-  align-items: center;
+  align-items: flex-end;
   animation: .5s ease-in-out 0s 1 light-bounce-in;
   bottom: 1rem;
   display: flex;
@@ -7,7 +7,10 @@
   margin: auto;
   max-width: 30rem;
   position: fixed;
+  // height: 5rem;
   right: 0;
+  text-align: center;
+  z-index: 1;
 
   .alert-body {
     margin-bottom: 0;

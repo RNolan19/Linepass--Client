@@ -84,7 +84,7 @@ class App extends Component {
           )} />
           <Route exact path='/bars' user={user} render={(props) => (
             <div>
-              <Header user={user} />
+              <Header {...props} user={user} />
               <Bar {...props} alert={this.alert} user={user} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <Footer />
 
@@ -95,6 +95,7 @@ class App extends Component {
             <Fragment>
               <HeaderFixed/>
               <NewBar {...props} alert={this.alert} user={user} />
+              <Footer />
             </Fragment>
           )} />
 
@@ -102,6 +103,7 @@ class App extends Component {
             <div>
               <HeaderFixed />
               <CreateBar alert={this.alert} user={user} addBars={this.addBars} loadSampleBars={this.loadSampleBars} state={this.state.bars}/>
+              <Footer />
             </div>
           )} />
 

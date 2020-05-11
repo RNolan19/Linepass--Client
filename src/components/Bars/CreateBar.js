@@ -79,12 +79,13 @@ const CreateBar = props => {
     return <Redirect to={`/bars/${createBarId.barId}`} />
   }
   return (
-    <div>
-      <h3>Add Your Bar</h3>
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
+    <div className="add_bar_page">
+      <h3 className="add_bar_page-header">Add Your Bar</h3>
+      <p className="add_bar_page-text">Over 50% of the Bars on LinePass have reported an additional $1,000 - 5,000 in monthly revenue </p>
+      <form onSubmit={handleSubmit} className="add_bar_form">
+        <label>Bar Name</label>
         <input
-          placeholder="Bar Name"
+          placeholder=""
           value={bar.name}
           name="name"
           onChange={handleChange}
@@ -92,7 +93,7 @@ const CreateBar = props => {
 
         <label>City</label>
         <input
-          placeholder="City"
+          placeholder=""
           value={bar.city}
           name="city"
           onChange={handleChange}
@@ -100,13 +101,13 @@ const CreateBar = props => {
 
         <label>Address</label>
         <input
-          placeholder="Bar Address"
+          placeholder=""
           value={bar.address}
           name="address"
           onChange={handleChange}
         />
 
-        <label>Price</label>
+        <label>Set Your Price</label>
         <input
           type="number"
           value={bar.price}
@@ -115,14 +116,6 @@ const CreateBar = props => {
         />
         <button type="submit">Submit</button>
 
-      </form>
-
-      <form className="add-my-bar" onSubmit={this.createBar}>
-        <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
-        <input name="price" ref={this.priceRef} type="text" placeholder="Price" />
-        <input name="city" ref={this.cityRef} type="text" placeholder="City" />
-        <input name="address" ref={this.addressRef} type="text" placeholder="Address" />
-        <button className="submit">+ Add My Bar</button>
       </form>
     </div>
   )

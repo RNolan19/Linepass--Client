@@ -45,17 +45,11 @@ const Bar = props => {
             <p className="card_cta-rate"> Daily Rate</p>
             <p className="card_cta-price">${bar.price}</p>
           </div>
-          <Link to={`#/bars/${bar._id}`}><button className="btn" onClick={handleClick}>Skip The Line</button></Link>
+          <Link to={`/bars/${bar._id}`}><button className="btn">Skip The Line</button></Link>
         </div>
       </div>
     </div>
   ))
-
-  const handleClick = event => {
-    const barName = event.currentTarget.dataset.name
-    console.log(barName)
-    return barName
-  }
 
   return (
     <Fragment>

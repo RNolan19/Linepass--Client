@@ -32,11 +32,11 @@ class Header extends React.Component {
       <Fragment>
         <header className="header">
           <div className="header_text-box">
-            <Link to='/'><h1 className="heading_main">Linepass Boston</h1></Link>
+            <Link to='/bars'><h1 className="heading_main">Linepass Boston</h1></Link>
             <a href="#" className="header_text-box-link">Our Story</a>
             <a href="#" className="header_text-box-link">Careers</a>
             <Link to='/add-my-bar'><a href="#" className="header_text-box-link">Add Your Bar</a></Link>
-            <a href="#" className="header_text-box-link">Contact Us</a>
+            <a href="#sign-out" className="header_text-box-link">Sign Out</a>
           </div>
           <div className="header_link-box">
             <a href="#/bars" className="header_link-2">Never Wait In Line Again</a>
