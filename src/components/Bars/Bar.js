@@ -14,15 +14,10 @@ const Bar = props => {
   const [bar, setBar] = useState([])
 
   useEffect(() => {
-    axios({
-      url: `${apiUrl}/bars`,
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${props.user.token}`
-      }
-    })
+    axios(`${apiUrl}/bars`)
       .then(res => setBar(res.data.bars))
-      .catch(() => props.alert({ heading: 'Error', message: 'Couldn\'t retrieve the requested bar', variant: 'danger' }))
+      .then(() => props.alert({ heading: 'Success', message: 'Skip The Line At These Bars!', variant: 'success' }))
+      .catch(console.error)
   }, [])
   console.log(bar)
 

@@ -7,9 +7,8 @@ class Footer extends React.Component {
       <div className="footer-container">
         <p> LinePass Boston</p>
         <div className="footer-items">
-          <Nav.Link>How Does LinePass Work?</Nav.Link>
+          <Nav.Link>About Us</Nav.Link>
           <Nav.Link>Can I Add My Bar or Restaurant?</Nav.Link>
-          <Nav.Link>Contact Us</Nav.Link>
           <Nav.Link>Careers</Nav.Link>
         </div>
       </div>

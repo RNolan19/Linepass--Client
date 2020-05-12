@@ -21,9 +21,9 @@ import apiUrl from '../../apiConfig.js'
 // </div>
 
 const NewBar = props => {
-  const [bar, setBar] = useState({ name: '', city: '', address: '', price: '' })
+  const [bar, setBar] = useState({ name: '', city: '', address: '', price: '', owner: '' })
   const userId = props.user._id
-  console.log(props, bar)
+  console.log(props.user._id)
 
   useEffect(() => {
     axios({
@@ -80,10 +80,10 @@ const NewBar = props => {
               <p>-Michael Scott</p>
             </div>
             <a className="btn btn--black product_page_buttons-black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30 Minute Line.  Thanks</a>
-            {console.log(props.user_id, bar.owner)}
+            {console.log(userId, bar.owner)}
             <div className="product_page_buttons">
               <a href='#/bars' className="back-btn">Back</a>
-              { userId === bar.owner ? (
+              { userId === bar.owner._id ? (
                 <Fragment>
                   <button href='/bars' className="update-btn">Update</button>
                   <button className="delete-btn" onClick={ destroy }>Delete</button>
