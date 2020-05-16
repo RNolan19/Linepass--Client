@@ -15,6 +15,14 @@ body {
     // min-height: 50rem;
 }
 
+/////////////////////////////////////
+// Breakpoints
+$bp-largest: 90em; // 1440px / 16px
+$bp-large: 75em; // 1200px / 16px
+$bp-medium: 56.25em; // 900px
+$bp-small: 43.75rem; // 700px
+
+
 ////////////////////////////////////////
 //Variables
 $color-primary: #D8C060;
@@ -36,8 +44,8 @@ $light-grey: #D3D3D3;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  height: 65vh;
-  width: 65vw;
+  height: 60vh;
+  width: 45vw;
   background-color: black;
   // border: 1px black solid;
   display: flex;
@@ -47,6 +55,10 @@ $light-grey: #D3D3D3;
 
   outline: 1.5rem solid #D8C060;
   outline-offset: 2rem;
+
+  @media (max-width: $bp-medium) {
+    width: 65vw;
+  }
 }
 
 .homepage-items{
@@ -54,12 +66,32 @@ $light-grey: #D3D3D3;
 
   &_header {
     font-size: 10rem;
-    margin-top: 13rem;
+    margin-top: 3rem;
     margin-bottom: 3rem;
+
+// @media (max-width: $bp-largest) {
+//   margin-top: 1rem;
+// }
+//
+@media (max-width: $bp-large) {
+  font-size: 9rem;
+}
+
+@media (max-width: $bp-medium) {
+  font-size: 7rem;
+}
   }
 
   &_tagline {
     font-size: 5rem;
+
+    @media (max-width: $bp-medium) {
+      font-size: 3rem;
+    }
+
+    // @media (max-width: $bp-small) {
+    //   font-size: 2rem;
+    // }
   }
 
   &_links {
@@ -78,6 +110,14 @@ $light-grey: #D3D3D3;
     a:hover {
       color: #fff;
       font-weight: 500;
+    }
+
+    @media (max-width: $bp-largest) {
+      margin-top: 8rem;
+    }
+
+    @media (max-width: $bp-large) {
+      font-size: 2rem;
     }
 
   }
@@ -99,12 +139,12 @@ $light-grey: #D3D3D3;
   background-color: white;
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 50%;
   transform: translate(-50%, -50%);
   // width: 50vw;
 
-  height: 55vh;
-  width: 35vw;
+  height: 60vh;
+  width: 45vw;
   // background-color: black;
 
   outline: 1.5rem solid #D8C060;
@@ -115,6 +155,11 @@ $light-grey: #D3D3D3;
   // text-align: center;
   font-size: 2.5rem;
   font-weight: 600;
+
+  @media (max-width: $bp-small) {
+    width: 65vw;
+    height: 65vh;
+  }
 
 
   h3 {
@@ -129,11 +174,18 @@ $light-grey: #D3D3D3;
     text-align: center;
     font-size: 1.75rem;
     color: black;
-    margin-left: 13rem;
+    display: flex;
+    justify-content: center;
     margin-top: 2rem;
     font-weight: 500;
-  }
 
+    @media (max-width: $bp-largest) {
+      margin-left: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+  }
 
 
   .sign-up {
@@ -425,7 +477,7 @@ $light-grey: #D3D3D3;
   text-align: center;
   padding: 4rem;
   margin-bottom: 8rem;
-    flex: 0 0 33.333%;
+
 
   img {
   width: 45rem;
@@ -441,8 +493,7 @@ $light-grey: #D3D3D3;
   width: 45rem;
   padding: 1rem;
   height: 55rem;
-  margin-top: 8rem;
-  margin-bottom: 12rem;
+  margin: 8rem 4rem 12rem 4rem;
 
   perspective: 150rem;
   position: relative;
@@ -641,28 +692,37 @@ $light-grey: #D3D3D3;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin: 5rem 0;
 
   &-header {
     font-size: 5rem;
-    margin-top: 10rem;
   }
 
   &-text {
     font-size: 2rem;
     padding: 3rem 0 5rem 0;
+    text-align: center;
   }
 }
 .add_bar_form {
   border: 1px black solid;
-  height: 50vh;
+  height: 55vh;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 40vw;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
   background-image: linear-gradient(to bottom right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
   color: black;
+
+  @media (max-width: $bp-large) {
+    width: 60vw;
+  }
+
+  @media (max-width: $bp-small) {
+    width: 85vw;
+  }
 
 
   & input {

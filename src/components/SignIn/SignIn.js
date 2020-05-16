@@ -78,7 +78,7 @@ class SignIn extends Component {
             <button className="homepage-button">SUBMIT</button>
           </Form>
 
-          <a href='#sign-up'>Don&#39;t Have An Account Yet? Sign Up Here!</a>
+          <a className="signup-link"href='#sign-up'>Don&#39;t Have An Account Yet? Sign Up Here!</a>
         </div>
       </section>
     )
