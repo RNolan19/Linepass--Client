@@ -11,7 +11,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Bar from '../Bars/Bar'
 import CreateBar from '../Bars/CreateBar'
 import Homepage from '../Homepage'
-
+// import ProductPage from '../Bars/ProductPage'
 import NewBar from '../Bars/NewBar'
 import Footer from '../Footer'
 import HeaderFixed from '../Header/HeaderFixed'

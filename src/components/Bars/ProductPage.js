@@ -54,13 +54,12 @@ const ProductPage = props => {
           </div>
 
           <div className="product_page-item product_page-description">
-            <div>
-              <p><em>&#39;You Wait In 100% of Lines You Don&#39;t Pay To Skip&#39;</em></p>
-              <p>-Wayne Gretzky</p>
-              <p>-Michael Scott</p>
+            <div className="product_page-description-text">
+              <p>Skip The Line Today For:</p>
+              <p>$20</p>
             </div>
-            <a className="btn btn--black product_page_buttons-black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30 Minute Line.  Thanks</a>
-            <div className="product_page_buttons">
+            <a className="btn btn--black product_page-buttons-black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30 Minute Line.  Thanks</a>
+            <div className="product_page-description-buttons">
               <button href='/bars' className="back-btn">Back</button>
               <button href='/bars' className="update-btn">Update</button>
               <button href='/bars' className="delete-btn" onClick={ destroy }>Delete</button>

@@ -74,14 +74,13 @@ const NewBar = props => {
           </div>
 
           <div className="product_page-item product_page-description">
-            <div>
-              <p><em>&#39;You Wait In 100% of Lines You Don&#39;t Pay To Skip&#39;</em></p>
-              <p>-Wayne Gretzky</p>
-              <p>-Michael Scott</p>
+            <div className="product_page-description-text">
+              <p className="product_page-description-text-skip">Skip The Line Today For:</p>
+              <p>${bar.price}</p>
             </div>
-            <a className="btn btn--black product_page_buttons-black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30 Minute Line.  Thanks</a>
+            <a className="btn--black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30-60 Minute Line</a>
             {console.log(userId, bar.owner)}
-            <div className="product_page_buttons">
+            <div className="product_page-description-buttons">
               <a href='#/bars' className="back-btn">Back</a>
               { userId === bar.owner._id ? (
                 <Fragment>
