@@ -14,6 +14,8 @@ import Homepage from '../Homepage'
 // import ProductPage from '../Bars/ProductPage'
 import NewBar from '../Bars/NewBar'
 import Footer from '../Footer'
+import Info from '../Info'
+import About from '../About'
 import HeaderFixed from '../Header/HeaderFixed'
 //
 // <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway'/>
@@ -85,6 +87,7 @@ class App extends Component {
           <Route exact path='/bars' user={user} render={(props) => (
             <div>
               <Header {...props} user={user} />
+              <Info />
               <Bar {...props} alert={this.alert} user={user} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <Footer />
 
@@ -102,6 +105,7 @@ class App extends Component {
           <Route exact path='/add-my-bar' user={user} render={() => (
             <div>
               <HeaderFixed />
+              <About />
               <CreateBar alert={this.alert} user={user} addBars={this.addBars} loadSampleBars={this.loadSampleBars} state={this.state.bars}/>
               <Footer />
             </div>

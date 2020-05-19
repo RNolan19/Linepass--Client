@@ -49,6 +49,9 @@ const Bar = props => {
   return (
     <Fragment>
       <div className="bar-section" id="bar-section">
+        <div className="bar-section-header ">
+          <p>Skip The Line At Any Of These Bars:</p>
+        </div>
         <div className="bar-container">
           {barsJsx}
         </div>

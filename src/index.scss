@@ -330,6 +330,98 @@ $light-grey: #D3D3D3;
 }
 
 /////////////////////////
+// Info section
+
+.info_section {
+  height: 50vh;
+  // border: 1px solid blue;
+  text-align: center;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0 1rem 0;
+  // background-color: #f0f0f0;
+  border-top: $color-primary 8px solid;
+  border-bottom: $color-primary 8px solid;
+
+    @media (max-width: $bp-large) {
+    font-size: 2rem;
+  }
+}
+
+.info_container {
+
+  &-text {
+
+    &-bold {
+      font-weight: 700;
+      font-size: 4rem;
+      padding: 2rem 0;
+
+      @media (max-width: $bp-large) {
+        font-size: 3.5rem;
+      }
+    }
+
+  }
+}
+
+
+/////////////////////////
+// ABOUT
+.about_section {
+  height: 100vh;
+  // border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+
+  .about_container {
+
+  }
+
+  .about_top {
+    background-color: #7797bf;
+    height: 40vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .about_benefits-section {
+    height: 60vh;
+    background-color: #2d3e54;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 2rem;
+    }
+
+    .about_benefits {
+
+    display: flex;
+
+    &-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5rem;
+    }
+
+    &-owners {
+      width: 50%;
+    }
+
+    &-customers {
+      width: 50%;
+    }
+}
+}
+
+/////////////////////////
 // Buttons
 .homepage-button {
   background: black;
@@ -513,9 +605,19 @@ $light-grey: #D3D3D3;
 ///Bars
 .bar-section {
   background-color: white;
-  padding: 15rem 0 15rem 0;
+  padding: 1rem 0 15rem 0;
   // display: flex;
   // flex-wrap: wrap;
+
+  &-header {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 8rem auto;
+    color: $color-primary;
+
+    display: block;
+    text-align: center;
+  }
 
 
 }
