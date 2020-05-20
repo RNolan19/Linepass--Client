@@ -33,7 +33,7 @@ class Header extends React.Component {
         <header className="header">
           <div className="header_text-box">
             <Link to='/bars'><h1 className="heading_main">Linepass Boston</h1></Link>
-            <a href="#/bars" className="header_text-box-link">About Us</a>
+            <Link to="/about" className="header_text-box-link">About Us</Link>
             <Link to='/add-my-bar'><a href="#" className="header_text-box-link">Add Your Bar</a></Link>
             <a href="#sign-out" className="header_text-box-link">Sign Out</a>
           </div>

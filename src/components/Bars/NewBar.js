@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
+import { Link } from 'react-router-dom'
 
 // import Lincoln from './App/lincoln.jpg'
 // import { Col } from 'react-bootstrap'
@@ -78,7 +79,7 @@ const NewBar = props => {
               <p className="product_page-description-text-skip">Skip The Line Today For:</p>
               <p>${bar.price}</p>
             </div>
-            <a className="btn--black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30-60 Minute Line</a>
+            <Link to="/confirmation"><a className="btn--black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30-60 Minute Line</a></Link>
             {console.log(userId, bar.owner)}
             <div className="product_page-description-buttons">
               <a href='#/bars' className="back-btn">Back</a>
