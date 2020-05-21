@@ -12,7 +12,7 @@ class About extends React.Component {
             <p className="about_benefits-header">A Win-Win For Bar Owners And Customers</p>
             <div className="about_benefits">
               <div className="about_benefits-owners">
-                <h1 className="about_benefits-owners-header">Create A New Revenue Stream For You Bar</h1>
+                <h1 className="about_benefits-owners-header">Bar Owners Get A New Revenue Stream</h1>
                 <li>Businesses on LinePass Are Able To Generate An Additional 1k-5K Per Month</li>
                 <li>Stop Lining The Doorman&#39;s Pockets With Your ProFits</li>
                 <li>Bring In Customers That Are Happy To Spend Money Just To Get In The Door</li>

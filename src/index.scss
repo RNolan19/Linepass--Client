@@ -377,6 +377,14 @@ $light-grey: #D3D3D3;
   flex-direction: column;
   // margin-top: 3rem;
 
+  @media (max-width: $bp-large) {
+    height: 115vh;
+  }
+
+  @media (max-width: $bp-medium) {
+    height: 125vh;
+  }
+
   .about_container {
 
   }
@@ -390,22 +398,46 @@ $light-grey: #D3D3D3;
     align-items: center;
     font-size: 3rem;
     text-align: center;
+
+    @media (max-width: $bp-medium) {
+      font-size: 2.4rem;
+    }
+
+    @media (max-width: $bp-small) {
+      font-size: 2rem;
+    }
   }
 
   .about_benefits-section {
-    height: 60vh;
+    height: 55vh;
     background-color: #2d3e54;
     color: white;
     font-size: 3rem;
     text-align: center;
     padding-top: 2rem;
+
+    @media (max-width: $bp-large) {
+      height: 65vh;
+    }
+
+    @media (max-width: $bp-medium) {
+      height: 75vh;
+    }
     }
 
     .about_benefits {
-    height: 50vh;
+    height: 55vh;
     display: flex;
     align-items: flex-start;
     padding: 2rem 0;
+
+    @media (max-width: $bp-large) {
+      height: 65vh;
+    }
+
+    @media (max-width: $bp-medium) {
+      height: 75vh;
+    }
 
     &-header {
       display: flex;
@@ -417,16 +449,29 @@ $light-grey: #D3D3D3;
 
     &-owners {
       width: 50%;
-      margin-right: 4rem;
-      font-size: 2.5rem;
+      font-size: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      margin-left: 1rem;
+
+      @media (max-width: $bp-small) {
+        font-size: 1.75rem;
+      }
+
 
       &-header {
         font-size: 3.5rem;
         margin: 0 2rem 4rem 2rem;
-        border-bottom: 1px solid white;
+
+        @media (max-width: $bp-medium) {
+          font-size: 3rem;
+        }
+
+        @media (max-width: $bp-small) {
+          font-size: 2.5rem;
+        }
       }
 
       & li {
@@ -436,17 +481,30 @@ $light-grey: #D3D3D3;
 
     &-customers {
       width: 50%;
-      margin-left: 6rem;
-      font-size: 2.5rem;
+      font-size: 2rem;
 
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      padding-left: 5rem;
+      margin-right: 1rem;
+
+      @media (max-width: $bp-small) {
+        font-size: 1.75rem;
+      }
 
       &-header {
         font-size: 3.5rem;
         margin: 0 2rem 4rem 2rem;
-        border-bottom: 1px solid white;
+
+        @media (max-width: $bp-medium) {
+          font-size: 3rem;
+        }
+
+        @media (max-width: $bp-small) {
+          font-size: 2.5rem;
+        }
       }
 
       & li {
@@ -1015,7 +1073,7 @@ $light-grey: #D3D3D3;
   }
 }
 .add_bar_form {
-  border: 1px black solid;
+  border: 4px black solid;
   height: 55vh;
   display: flex;
   flex-direction: column;

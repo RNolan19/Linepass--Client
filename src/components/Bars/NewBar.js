@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom'
 const NewBar = props => {
   const [bar, setBar] = useState({ name: '', city: '', address: '', price: '', owner: '' })
   const userId = props.user._id
-  console.log(props.user._id)
+  console.log(props)
 
   useEffect(() => {
     axios({
@@ -85,7 +85,7 @@ const NewBar = props => {
               <a href='#/bars' className="back-btn">Back</a>
               { userId === bar.owner._id ? (
                 <Fragment>
-                  <button href='/bars' className="update-btn">Update</button>
+                  <Link to={`/bars/${props.match.params.id}/update`}><button className="update-btn">Update</button></Link>
                   <button className="delete-btn" onClick={ destroy }>Delete</button>
                 </Fragment>
               ) : null}

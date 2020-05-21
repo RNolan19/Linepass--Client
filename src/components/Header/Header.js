@@ -38,7 +38,7 @@ class Header extends React.Component {
             <a href="#sign-out" className="header_text-box-link">Sign Out</a>
           </div>
           <div className="header_link-box">
-            <a href="#/bars" className="header_link-2">Never Wait In Line Again</a>
+            <a href="#bars" className="header_link-2">Never Wait In Line Again</a>
           </div>
         </header>
       </Fragment>

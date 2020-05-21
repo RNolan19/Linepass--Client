@@ -23,7 +23,7 @@ const Bar = props => {
 
   const barsJsx = bar.map(bar => (
 
-    <div className="card" key={bar._id} as={'a'} href={`#/bars/${bar._id}`}>
+    <div className="card" id="bars" key={bar._id} as={'a'} href={`#/bars/${bar._id}`}>
       <div className="card_side card_side-front">
         <div className="card_heading">
           <p>{bar.name}</p>

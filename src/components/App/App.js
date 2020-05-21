@@ -13,8 +13,9 @@ import CreateBar from '../Bars/CreateBar'
 import Homepage from '../Homepage'
 // import ProductPage from '../Bars/ProductPage'
 import NewBar from '../Bars/NewBar'
+import UpdateBar from '../Bars/UpdateBar'
 import Footer from '../Footer'
-import Info from '../Info'
+// import Info from '../Info'
 import About from '../About'
 import Confirmation from '../Confirmation'
 import HeaderFixed from '../Header/HeaderFixed'
@@ -89,7 +90,7 @@ class App extends Component {
           <Route exact path='/bars' user={user} render={(props) => (
             <div>
               <Header {...props} user={user} />
-              <Info />
+              <About />
               <Bar {...props} alert={this.alert} user={user} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <Footer />
 
@@ -104,11 +105,18 @@ class App extends Component {
             </Fragment>
           )} />
 
+          < Route exact path="/bars/:id/update" user={user} render={(props) => (
+            <Fragment>
+              <HeaderFixed/>
+              <UpdateBar {...props} alert={this.alert} user={user} />
+              <Footer />
+            </Fragment>
+          )} />
+
           <Route exact path='/about' user={user} render={() => (
             <div>
               <HeaderFixed />
               <About />
-              <Footer />
             </div>
           )} />
 
@@ -116,7 +124,6 @@ class App extends Component {
             <div>
               <HeaderFixed />
               <Confirmation {...props} user={user} />
-              <Footer />
             </div>
           )} />
 
