@@ -54,7 +54,7 @@ const UpdateBar = props => {
       .then(res => {
         setUpdated(true)
         console.log(res.data)
-        props.alert({ heading: 'Success', message: 'Listing created', variant: 'success' })
+        props.alert({ heading: 'Success', message: 'Bar Updated!', variant: 'success' })
       })
       .catch(() => props.alert({ heading: 'Error', message: 'Something went wrong, please try again', variant: 'danger' }))
   }

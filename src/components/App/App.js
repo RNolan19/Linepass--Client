@@ -17,6 +17,7 @@ import UpdateBar from '../Bars/UpdateBar'
 import Footer from '../Footer'
 // import Info from '../Info'
 import About from '../About'
+import Reviews from '../Reviews'
 import Confirmation from '../Confirmation'
 import HeaderFixed from '../Header/HeaderFixed'
 //
@@ -92,6 +93,7 @@ class App extends Component {
               <Header {...props} user={user} />
               <About />
               <Bar {...props} alert={this.alert} user={user} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
+              <Reviews />
               <Footer />
 
             </div>
@@ -117,6 +119,7 @@ class App extends Component {
             <div>
               <HeaderFixed />
               <About />
+              <Reviews />
             </div>
           )} />
 
