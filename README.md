@@ -1,8 +1,7 @@
 <h1>LinePass App</h1>
 
 <h4>LinePass is a "two sided marketplace", which allows customers to pay to skip the line at their favorite bars.  Conversely, it enables
-bar owners to create a new revenue stream by charging their customers to skip the line.  It was a fun project to build, but I think it
-could also potentially have real world value for business owners.</h4>
+bar owners to create a new revenue stream by charging their customers to skip the line.  It has been a fun and challenging project to build, which has really enhanced my React skills, but I also think it could potentially have real world value for business owners.</h4>
 
 <h4>Technologies Used</h4>
 <ul>

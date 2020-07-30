@@ -12,8 +12,8 @@ class SignIn extends Component {
     super()
 
     this.state = {
-      email: '',
-      password: ''
+      email: 'b@b',
+      password: 'b'
     }
   }
 
@@ -79,6 +79,7 @@ class SignIn extends Component {
           </Form>
 
           <a className="signup-link"href='#sign-up'>Don&#39;t Have An Account Yet? Sign Up Here!</a>
+          <a className="signup-link"href='#sign-up'> (Or simply click Submit to log in with the provided credentials)</a>
         </div>
       </section>
     )
