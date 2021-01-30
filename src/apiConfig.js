@@ -1,6 +1,6 @@
 let apiUrl
 const apiUrls = {
-  production: 'https://fierce-journey-93874.herokuapp.com',
+  production: 'https://cors-anywhere.herokuapp.com/https://fierce-journey-93874.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
