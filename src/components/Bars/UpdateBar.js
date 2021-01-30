@@ -4,11 +4,8 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 
 const UpdateBar = props => {
-// so this essentialy defines the empty bar state
-// useState sets the initial values of state.bar
   const [bar, setBar] = useState({ name: '', city: '', address: '', price: '' })
   const [updated, setUpdated] = useState(false)
-  console.log(bar, props)
 
   useEffect(() => {
     axios({
@@ -22,24 +19,14 @@ const UpdateBar = props => {
         setBar(res.data.bar))
       .catch(() => props.alert({ heading: 'Error', message: 'Couldn\'t retrieve the requested bar', variant: 'danger' }))
   }, [])
-  console.log(bar)
 
   const handleChange = event => {
     event.persist()
-    console.log(props.user)
-    console.log(event.target.value)
-    // here, we set a new bar.state by taking a copy of bar
-    // when the value in the form changes, the handleChange function is run
     setBar({ ...bar, [event.target.name]: event.target.value })
-    console.log(bar)
   }
 
-  // then when the user hits submit, we run handle submit
   const handleSubmit = event => {
     event.preventDefault()
-    // console.log(event.target)
-    const formData = new FormData(event.target)
-    console.log(formData)
 
     axios({
       url: `${apiUrl}/bars/${props.match.params.id}`,
@@ -53,14 +40,12 @@ const UpdateBar = props => {
     })
       .then(res => {
         setUpdated(true)
-        console.log(res.data)
         props.alert({ heading: 'Success', message: 'Bar Updated!', variant: 'success' })
       })
       .catch(() => props.alert({ heading: 'Error', message: 'Something went wrong, please try again', variant: 'danger' }))
   }
 
   if (updated) {
-    console.log({ bar })
     return <Redirect to={`/bars/${props.match.params.id}`} />
   }
   return (

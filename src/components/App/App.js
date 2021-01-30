@@ -1,10 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
-
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
-import faker from 'faker'
-
 import Header from '../Header/Header'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
@@ -14,24 +11,15 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Bar from '../Bars/Bar'
 import CreateBar from '../Bars/CreateBar'
 import Homepage from '../Homepage'
-// import ProductPage from '../Bars/ProductPage'
 import NewBar from '../Bars/NewBar'
 import UpdateBar from '../Bars/UpdateBar'
 import Footer from '../Footer'
-// import Info from '../Info'
+import Brady from '../../img/brady.jpeg'
 import About from '../About'
 import ReviewDetails from '../ReviewDetails'
 import ReviewsContainer from '../ReviewsContainer'
 import Confirmation from '../Confirmation'
 import HeaderFixed from '../Header/HeaderFixed'
-//
-// <Bar barImage={Lincoln} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway'/>
-// <Bar barImage={Broadway} barName='The Broadway' city='South Boston' address='726 East Broadway'/>
-// <Bar barImage={Loco} barName='Loco Taqueria' city='South Boston' address='412 West Broadway'/>
-// <hr className='hr-large'></hr>
-// <Bar barImage={Stats} barName='STATS Bar & Grille' city='South Boston' address='77 Dorchester Street'/>
-// <Bar barImage={Capo} barName='Capo Restaurant' city='South Boston' address='443 West Broadway'/>
-// <Bar barImage={Legal} barName='Legal Harborside' city='Seaport' address='270 Northern Ave'/>
 
 class App extends Component {
   constructor () {
@@ -41,26 +29,6 @@ class App extends Component {
       user: null,
       alerts: []
     }
-  }
-
-  addBars = bar => {
-    // 1- take a copy of the existing state. Never want to directly mutate state
-    const newBars = { ...this.state.bars }
-    // 2- add our new Bar to the Bars variable
-    // use timestamp to give each Bar a unique index ID
-    newBars[bar.name] = bar
-    // 3- Set the new bars object to state w/ built in setState method
-    this.setState({
-      // pass it the piece you want to update, aka the bars state, + overwrite it
-      // with the new object.
-      bars: newBars
-    })
-  }
-
-  loadSampleBars = () => {
-    // this.setState({
-    //   bars: sampleFishes
-    // })
   }
 
   setUser = user => this.setState({ user })
@@ -97,9 +65,9 @@ class App extends Component {
               <Header {...props} user={user} />
               <Bar {...props} alert={this.alert} user={user} barName='Lincoln Tavern' city='South Boston' address='425 West Broadway' link='Lincoln' price='30'/>
               <ReviewsContainer>
-                <ReviewDetails avatar={faker.image.avatar()} name="Brady" comment="&#34;LinePass has been great for my business.  I never realized how much money I was missing out on&#34;"/>
-                <ReviewDetails avatar={faker.image.avatar()} name="Corey" comment="&#34;The worst part of the night is either waiting in line or Finding a bar without one.  I love LinePass&#34;"/>
-                <ReviewDetails avatar={faker.image.avatar()} name="Alex" comment="&#34;I&#39;m never going back to waiting in line.  For the price, LinePass is a no brainer, in my opinion.&#34;"/>
+                <ReviewDetails avatar={Brady} name="Thomas" comment="&#34;LinePass has been great for my business.  I never realized how much money I was missing out on&#34;"/>
+                <ReviewDetails avatar={Brady} name="Edward" comment="&#34;The worst part of the night is either waiting in line or Finding a bar without one.  I love LinePass&#34;"/>
+                <ReviewDetails avatar={Brady} name="Brady" comment="&#34;I&#39;m never going back to waiting in line.  For the price, LinePass is a no brainer, in my opinion.&#34;"/>
               </ReviewsContainer>
               <Footer />
 
@@ -126,7 +94,7 @@ class App extends Component {
             <div>
               <HeaderFixed />
               <About />
-              <ReviewDetails avatar={faker.image.avatar()} />
+              <Footer />
             </div>
           )} />
 

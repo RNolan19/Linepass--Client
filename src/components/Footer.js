@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from 'react-bootstrap/Nav'
+import { Link } from 'react-router-dom'
 
 class Footer extends React.Component {
   render () {
@@ -7,9 +7,9 @@ class Footer extends React.Component {
       <div className="footer-container">
         <p> LinePass Boston</p>
         <div className="footer-items">
-          <Nav.Link>About Us</Nav.Link>
-          <Nav.Link>Can I Add My Bar or Restaurant?</Nav.Link>
-          <Nav.Link>Careers</Nav.Link>
+          <Link to='/about'>About Us</Link>
+          <Link to="/add-my-bar">Add Your Bar or Restaurant!</Link>
+          <a href="mailto:support@linepassapp.com">Contact Us!</a>
         </div>
       </div>
     )

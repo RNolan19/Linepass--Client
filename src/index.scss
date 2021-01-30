@@ -281,7 +281,7 @@ $light-grey: #D3D3D3;
   a:hover {
     color: #D8C060;
     font-weight: 600;
-    border: 2px solid $color-primary;
+    border-bottom: 2px solid $color-primary;
     text-decoration: none;
   }
   }
@@ -872,10 +872,15 @@ $light-grey: #D3D3D3;
     font-size: 4rem;
     font-weight: 700;
     margin: 8rem auto;
-    color: $color-primary;
 
     display: block;
     text-align: center;
+
+    p {
+      border-bottom: 5px dotted $color-primary;
+      display: inline-block;
+
+    }
   }
 
 

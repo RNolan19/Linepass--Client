@@ -1,28 +1,11 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
-import { Link } from 'react-router-dom'
-
-// import Lincoln from './App/lincoln.jpg'
-// import { Col } from 'react-bootstrap'
-// import Button from 'react-bootstrap/Button'
-
-// <div className="added-bar-container" >
-//   <div className="bar-container">
-//     {/* this is how you have to comment in React.  Must be inside Fragment */}
-//     {/* anything inside the brackets can be JavaScript */}
-//     <img src={Lincoln} width='350px' height='400px' />
-//     <h1 className="barName">{name}</h1>
-//     <h3 className="city">{this.props.details.city}</h3>
-//     <h5 className="city">{this.props.details.address}</h5>
-//     <h5 className="city">Price to Enter: ${this.props.details.price}</h5>
-//     <hr></hr>
-//     <Link to={`/bars/${this.props.details.name}`}><Button className="btn-large" id="skip-button" onClick={this.props.getBarInfo}>SKIP THE LINE</Button></Link>
-//   </div>
-// </div>
+import { Link, Redirect } from 'react-router-dom'
 
 const NewBar = props => {
   const [bar, setBar] = useState({ name: '', city: '', address: '', price: '', owner: '' })
+  const [isDeleted, setIsDeleted] = useState(false)
   const userId = props.user._id
   console.log(props)
 
@@ -38,10 +21,8 @@ const NewBar = props => {
         setBar(res.data.bar))
       .catch(() => props.alert({ heading: 'Error', message: 'Couldn\'t retrieve the requested bar', variant: 'danger' }))
   }, [])
-  console.log(bar)
 
   const destroy = () => {
-    console.log(props)
     axios({
       url: `${apiUrl}/bars/${props.match.params.id}`,
       method: 'DELETE',
@@ -50,20 +31,21 @@ const NewBar = props => {
       }
     })
       .then(() => {
-        props.alert({ heading: 'Success', message: 'Listing Deleted', variant: 'warning' })
-        props.history.push('/bars')
+        setIsDeleted(true)
+        props.alert({ heading: 'Success', message: 'Listing Deleted', variant: 'success' })
       })
       .catch(() => props.alert({ heading: 'Uh Oh', message: 'Something when wrong!', variant: 'danger' }))
+  }
+
+  if (isDeleted) {
+    return <Redirect to={'/bars'} />
   }
 
   return (
     <Fragment>
       <div className="product_page">
         <div className="product_page_container">
-
           <div className="product_page-item product_page-card">
-            {/* this is how you have to comment in React.  Must be inside Fragment */}
-            {/* anything inside the brackets can be JavaScript */}
             <div className="card_heading">
               <p>{bar.name}</p>
             </div>
@@ -79,8 +61,7 @@ const NewBar = props => {
               <p className="product_page-description-text-skip">Skip The Line Today For:</p>
               <p>${bar.price}</p>
             </div>
-            <Link to="/confirmation"><a className="btn--black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30-60 Minute Line</a></Link>
-            {console.log(userId, bar.owner)}
+            <Link to="/confirmation" className="btn--black" id="skip-button" style={{ color: '#D8C060' }}>I&#39;d Like To Skip The 30-60 Minute Line</Link>
             <div className="product_page-description-buttons">
               <a href='#/bars' className="back-btn">Back</a>
               { userId === bar.owner._id ? (

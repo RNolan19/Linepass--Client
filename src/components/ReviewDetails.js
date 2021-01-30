@@ -6,7 +6,7 @@ const ReviewDetail = props => {
       <p><strong>{props.comment}</strong></p>
       <br></br>
       <p>-{props.name}</p>
-      <img src={props.avatar} alt="avatar"/>
+      <img src={props.avatar} alt="avatar" width="240"/>
     </div>
   )
 }
